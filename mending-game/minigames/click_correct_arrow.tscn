@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvvpghfamc4gd"]
+
+[ext_resource type="Script" uid="uid://bonyfb4am2fcf" path="res://minigames/click_correct_arrow.gd" id="1_1jig4"]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_1jig4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
