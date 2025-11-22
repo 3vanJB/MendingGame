@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://cat5ql7pc5mgr"]
+
+[ext_resource type="PackedScene" uid="uid://c2dgub3871pso" path="res://Interactable Scenes/transition_button.tscn" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://sccn4od7dt0e" path="res://Sprites/Rect_Button_Sheet.png" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://db4ckslitvtbr" path="res://Scripts/quit.gd" id="3_1ehe0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehe0"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(0, -2.25, 155.5, 102.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce3w2"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(304.5, 2.25, 144.5, 97.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(150, 1.5, 157, 98.5)
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="Temp_BAckground" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_right = 1157.0
+offset_bottom = 652.0
+color = Color(0.90708745, 0.5331118, 0.46990466, 0.6156863)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 425.0
+offset_top = 74.0
+offset_right = 718.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 40
+text = "Mending Game"
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+offset_left = 490.0
+offset_top = 200.0
+offset_right = 645.0
+offset_bottom = 510.0
+
+[node name="Play" parent="ButtonContainer" instance=ExtResource("1_28flt")]
+layout_mode = 2
+changeScene = "res://Scenes/level_1.tscn"
+textString = "Play"
+
+[node name="Credits" parent="ButtonContainer" instance=ExtResource("1_28flt")]
+layout_mode = 2
+changeScene = "res://Scenes/credits.tscn"
+textString = "Credits"
+
+[node name="Quit" type="TextureButton" parent="ButtonContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1ehe0")
+texture_pressed = SubResource("AtlasTexture_ce3w2")
+texture_hover = SubResource("AtlasTexture_n45e2")
+script = ExtResource("3_1ehe0")
+
+[node name="Label" type="Label" parent="ButtonContainer/Quit"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 37.0
+offset_right = 134.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ButtonContainer/Quit" to="ButtonContainer/Quit" method="_on_pressed"]

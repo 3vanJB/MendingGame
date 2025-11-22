@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dusqvx4xwe7fh"]
+
+[ext_resource type="PackedScene" uid="uid://c2dgub3871pso" path="res://Interactable Scenes/transition_button.tscn" id="1_vk57k"]
+
+[node name="Level_1" type="Node2D"]
+
+[node name="TransitionButton" parent="." instance=ExtResource("1_vk57k")]
+offset_left = 940.0
+offset_top = 524.0
+offset_right = 1092.0
+offset_bottom = 624.0
+changeScene = "res://Scenes/main_menu.tscn"
+textString = "Exit"

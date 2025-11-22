@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="MendingGame"
+run/main_scene="uid://cat5ql7pc5mgr"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
