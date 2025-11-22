@@ -16,15 +16,17 @@ static func new_button(
 	button.add_child(collision)
 	return button
 
-func _process(_delta: float) -> void:
-	if Input.is_action_pressed("click") && mouse_inside_area:
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("click") && mouse_inside_area:
 		clicks -= 1
 	if clicks < 1:
 		queue_free()
 
 func _on_mouse_shape_entered(_shape_idx: int) -> void:
 	mouse_inside_area = true
+	print(mouse_inside_area)
 
 
 func _on_mouse_shape_exited(_shape_idx: int) -> void:
 	mouse_inside_area = false
+	print(mouse_inside_area)
