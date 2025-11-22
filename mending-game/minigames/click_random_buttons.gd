@@ -1,8 +1,7 @@
 extends Node
 
-@onready var area_2d: Area2D = $Area2D
-
 var remaining_buttons: int
+@onready var spawn_area: SpawnArea = $SpawnArea
 
 func _on_ready() -> void:
 	get_viewport().physics_object_picking_sort = true
@@ -24,7 +23,7 @@ func generate_buttons(number:=1) -> void:
 		collision.shape = shape
 	
 		var button = NTimesButton.new_button(sprite, collision)
-		button.set_global_position(Vector2(10.0 * n, 10.0 * n))
+		button.set_global_position(spawn_area.get_random_vector())
 		button.button_removed.connect(_on_button_removed)
 		add_child(button)
 
