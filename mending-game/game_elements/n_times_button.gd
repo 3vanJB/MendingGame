@@ -1,6 +1,8 @@
 class_name NTimesButton
 extends Area2D
 
+signal button_removed
+
 var clicks: int
 var mouse_inside_area: bool = false
 
@@ -20,13 +22,11 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click") && mouse_inside_area:
 		clicks -= 1
 	if clicks < 1:
+		button_removed.emit()
 		queue_free()
 
 func _on_mouse_shape_entered(_shape_idx: int) -> void:
 	mouse_inside_area = true
-	print(mouse_inside_area)
-
 
 func _on_mouse_shape_exited(_shape_idx: int) -> void:
 	mouse_inside_area = false
-	print(mouse_inside_area)

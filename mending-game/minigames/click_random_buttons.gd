@@ -2,10 +2,15 @@ extends Node
 
 @onready var area_2d: Area2D = $Area2D
 
+var remaining_buttons: int
+
 func _on_ready() -> void:
 	get_viewport().physics_object_picking_sort = true
 	get_viewport().physics_object_picking_first_only = true
-	generate_buttons(2)
+	
+	var number_of_buttons = 5
+	remaining_buttons = number_of_buttons
+	generate_buttons(number_of_buttons)
 
 func generate_buttons(number:=1) -> void:
 	for n in number:
@@ -20,4 +25,10 @@ func generate_buttons(number:=1) -> void:
 	
 		var button = NTimesButton.new_button(sprite, collision)
 		button.set_global_position(Vector2(10.0 * n, 10.0 * n))
+		button.button_removed.connect(_on_button_removed)
 		add_child(button)
+
+func _on_button_removed() -> void:
+	remaining_buttons -= 1
+	if remaining_buttons == 0:
+		print("You Win!")
