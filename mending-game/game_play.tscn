@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c80lwei2ykqy5" path="res://fonts/ROSSTEN.ttf" id="1_w8nmq"]
 [ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://fonts/Ratego-Regular.otf" id="4_pj5e7"]
 [ext_resource type="Texture2D" uid="uid://bo3eqn43n1863" path="res://img/png_pixel_heart_pixabay.png" id="4_strlv"]
-[ext_resource type="Texture2D" uid="uid://db4ctvsyydcic" path="res://Rect_Button_Sheet.png" id="5_vkeae"]
+[ext_resource type="Texture2D" uid="uid://db4ctvsyydcic" path="res://img/Rect_Button_Sheet.png" id="5_vkeae"]
 [ext_resource type="Texture2D" uid="uid://dti25g2v80tmv" path="res://img/png_pixel_coin_pixabay.png" id="6_uqw4b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_strlv"]
