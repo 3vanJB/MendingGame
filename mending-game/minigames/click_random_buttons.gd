@@ -29,5 +29,6 @@ func generate_buttons(number:=1) -> void:
 
 func _on_button_removed() -> void:
 	remaining_buttons -= 1
+	print(remaining_buttons)
 	if remaining_buttons == 0:
 		print("You Win!")

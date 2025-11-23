@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dj5hwjwotfupy" path="res://game_elements/spawn_area.tscn" id="2_25dlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjmj0"]
-size = Vector2(531, 210)
+size = Vector2(907, 281)
 
 [node name="Root" type="Node"]
 script = ExtResource("1_oy5fc")
@@ -14,7 +14,7 @@ script = ExtResource("1_oy5fc")
 [node name="SpawnArea" parent="." instance=ExtResource("2_25dlh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
-position = Vector2(3, 1)
+position = Vector2(-0.5, -34.5)
 shape = SubResource("RectangleShape2D_hjmj0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
