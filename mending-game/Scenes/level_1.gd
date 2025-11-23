@@ -5,6 +5,7 @@ var games = {
 	"diagnose":{"path":"res://minigames/click_correct_arrow.tscn", "text":"Cure!"},
 	}
 var nextgame = load(games["diagnose"]["path"])
+var nexttext = games["diagnose"]["text"]
 var curgame
 @onready var HUD = $HUD
 @onready var spawnmarker = $GameSpawn
@@ -19,7 +20,11 @@ func startnextgame():
 	if curgame != null:
 		curgame.hide()
 		curgame.queue_free()
-	#await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.5).timeout
+	HUD.plabel.text = nexttext
+	HUD.plabel.show()
+	await get_tree().create_timer(0.5).timeout
+	HUD.plabel.hide()
 	var game = nextgame.instantiate()
 	game.position = spawnmarker.position
 	
