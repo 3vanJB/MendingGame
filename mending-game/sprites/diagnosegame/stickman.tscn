@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cjirx6kxqimpw"]
 
-[ext_resource type="Texture2D" uid="uid://n6py3cuegxao" path="res://sprites/diagnosegame/stickmandi-Sheet.png" id="1_xv5au"]
+[ext_resource type="Texture2D" uid="uid://n6py3cuegxao" path="res://Sprites/diagnosegame/stickmandi-Sheet.png" id="1_xv5au"]
 
 [sub_resource type="Animation" id="Animation_xv5au"]
 resource_name = "onfire"
