@@ -4,7 +4,7 @@ extends Node2D
 var games = {
 	"diagnose":{"path":"res://minigames/click_correct_arrow.tscn", "text":"Cure!"},
 	}
-var nextgame = load(games["diagnose"])
+var nextgame = load(games["diagnose"]["path"])
 var curgame
 @onready var HUD = $HUD
 @onready var spawnmarker = $GameSpawn
