@@ -3,7 +3,7 @@ extends Area2D
 
 signal objectDropped(objectType: int)
 
-var oneTimeDrop = false
+@export var oneTimeDrop = false
 var objects: Array[DraggableObject] = []
 
 static func new_drop_zone(
@@ -21,19 +21,27 @@ static func new_drop_zone(
 func _process(_delta: float) -> void:
 	for object in objects:
 		if not object.dragging:
-			_on_object_dropped(object)
+			_on_drag_object_dropped(object)
 
 func _on_area_entered(area: Area2D) -> void:
 	if is_instance_of(area, DraggableObject):
 		objects.push_back(area)
+	if is_instance_of(area, SwipableObject):
+		_on_swipe_object_dropped(area)
 
 func _on_area_exited(area: Area2D) -> void:
 	if is_instance_of(area, DraggableObject):
 		objects.erase(area)
 
-func _on_object_dropped(object: DraggableObject) -> void:
+func _on_drag_object_dropped(object: DraggableObject) -> void:
 	objects.erase(object)
 	objectDropped.emit(object.type)
 	object.queue_free()
+	if oneTimeDrop:
+		self.queue_free()
+
+func _on_swipe_object_dropped(object: SwipableObject) -> void:
+	object.queue_free()
+	objectDropped.emit(0)
 	if oneTimeDrop:
 		self.queue_free()

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddwtl5q1senkn"]
+
+[ext_resource type="Script" uid="uid://di1xstt8as8qw" path="res://game_elements/swipe_detector.gd" id="1_wpxl0"]
+
+[node name="SwipeDetector" type="Area2D"]
+script = ExtResource("1_wpxl0")
+
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_shape_exited"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://n85sk54sby7u"]
+
+[ext_resource type="Script" uid="uid://bof1d0mn7mm80" path="res://game_elements/swipable_object.gd" id="1_mvces"]
+
+[node name="SwipableObject" type="Area2D"]
+script = ExtResource("1_mvces")
