@@ -26,13 +26,18 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		diff = self.global_position - get_viewport().get_mouse_position()
 
+
 func _process(delta: float) -> void:
 	if mouse_inside_area && Input.is_action_pressed("click") && not dragging:
 			dragging = true
 	elif Input.is_action_just_released("click"):
 			dragging = false
+			if get_overlapping_areas().size() > 0:
+				print("dass")
+			
 	if dragging:
 		self.position = get_viewport().get_mouse_position() + diff
+
 
 func _on_mouse_shape_entered(_shape_idx: int) -> void:
 	mouse_inside_area = true

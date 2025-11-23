@@ -22,6 +22,7 @@ func _process(_delta: float) -> void:
 	for object in objects:
 		if not object.dragging:
 			_on_object_dropped(object)
+			
 
 func _on_area_entered(area: Area2D) -> void:
 	if is_instance_of(area, DraggableObject):
