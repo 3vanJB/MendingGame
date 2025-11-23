@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c2dgub3871pso" path="res://Interactable Scenes/transition_button.tscn" id="1_28flt"]
 [ext_resource type="Texture2D" uid="uid://vlfnoiti1c7r" path="res://Backgrounds/Dungeon_Drop.png" id="1_ce3w2"]
-[ext_resource type="Texture2D" uid="uid://sccn4od7dt0e" path="res://Sprites/Rect_Button_Sheet.png" id="2_48xlc"]
+[ext_resource type="Texture2D" uid="uid://sccn4od7dt0e" path="res://sprites/Rect_Button_Sheet.png" id="2_48xlc"]
 [ext_resource type="Script" uid="uid://db4ckslitvtbr" path="res://Scripts/quit.gd" id="3_1ehe0"]
 [ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://Fonts/Ratego-Regular.otf" id="3_n45e2"]
 

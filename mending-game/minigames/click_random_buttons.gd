@@ -2,15 +2,20 @@ extends Node2D
 
 var remaining_buttons: int
 @onready var spawn_area: SpawnArea = $SpawnArea
+@onready var sprite = $Sword
 var sparkle = preload("res://game_elements/sparkler.tscn")
 
-func _on_ready() -> void:
+signal gamewon
+
+func _ready() -> void:
+	gamewon.connect(SIGNALBUS.ongamewon)
 	get_viewport().physics_object_picking_sort = true
 	get_viewport().physics_object_picking_first_only = true
 	
 	var number_of_buttons = 5
 	remaining_buttons = number_of_buttons
 	generate_buttons(number_of_buttons)
+
 
 func generate_buttons(number:=1) -> void:
 	for n in number:
@@ -31,4 +36,5 @@ func generate_buttons(number:=1) -> void:
 func _on_button_removed() -> void:
 	remaining_buttons -= 1
 	if remaining_buttons == 0:
-		print("You Win!")
+		sprite.play("fixed")
+		gamewon.emit()

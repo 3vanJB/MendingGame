@@ -3,7 +3,8 @@ extends Node2D
 
 var games = {
 	"diagnose":{"path":"res://minigames/click_correct_arrow.tscn", "text":"Cure!"},
-	"wall":{"path":"res://minigames/drag_and_drop.tscn", "text": "Fix!"}
+	"wall":{"path":"res://minigames/drag_and_drop.tscn", "text": "Fix!"},
+	"sword":{"path":"res://minigames/click_random_buttons.tscn", "text": "Shine!"}
 	}
 var nextgame = load(games["diagnose"]["path"])
 var nexttext = games["diagnose"]["text"]
