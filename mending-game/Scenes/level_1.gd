@@ -36,7 +36,8 @@ func gamelost():
 		gameover()
 
 func gameover():
-	pass
+	
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 
 

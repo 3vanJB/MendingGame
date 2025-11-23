@@ -45,3 +45,9 @@ grow_vertical = 1
 
 [node name="GameSpawn" type="Marker2D" parent="."]
 position = Vector2(284, 260)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1439.0
+offset_bottom = 809.0
+color = Color(0.42427135, 0.18572935, 0.771032, 1)
