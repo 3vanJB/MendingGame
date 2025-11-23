@@ -5,11 +5,25 @@
 
 [node name="Credits" type="Node2D"]
 
+<<<<<<< Updated upstream
 [node name="DungeonDrop" type="Sprite2D" parent="."]
 self_modulate = Color(0.37959853, 0.46681112, 0.7473963, 0.8117647)
 position = Vector2(578, 333.5)
 scale = Vector2(3.833333, 3.295)
 texture = ExtResource("1_gryuy")
+=======
+[node name="Temp_BAckground" type="ColorRect" parent="."]
+offset_right = 1166.0
+offset_bottom = 652.0
+color = Color(0.97582966, 0.7002122, 0.6254684, 0.69411767)
+metadata/_edit_lock_ = true
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
 
 [node name="TransitionButton" parent="." instance=ExtResource("1_r18jl")]
 offset_left = 918.0
@@ -41,7 +55,25 @@ offset_top = 230.0
 offset_right = 765.0
 offset_bottom = 537.0
 theme_override_font_sizes/font_size = 30
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 text = "Evan: Artist, Programming
 Will: Artist, Programming, Audio
 Jason: Programming
+=======
+text = "Evan: Art, Programming
+Will: Art, Programming, Music
+Jason: Coding, Sword Minigame
+>>>>>>> Stashed changes
+=======
+text = "Evan: Art, Programming
+Will: Art, Programming, Music
+Jason: Coding, Sword Minigame
+>>>>>>> Stashed changes
+=======
+text = "Evan: Art, Programming
+Will: Art, Programming, Music
+Jason: Coding, Sword Minigame
+>>>>>>> Stashed changes
 Wanda: UI"
