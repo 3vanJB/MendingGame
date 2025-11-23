@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbtglf2sxkms3"]
+
+[ext_resource type="Script" uid="uid://b5yja3uvbunbx" path="res://minigames/click_random_buttons.gd" id="1_oy5fc"]
+[ext_resource type="PackedScene" uid="uid://dj5hwjwotfupy" path="res://game_elements/spawn_area.tscn" id="2_25dlh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjmj0"]
+size = Vector2(531, 210)
+
+[node name="Root" type="Node"]
+script = ExtResource("1_oy5fc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="SpawnArea" parent="." instance=ExtResource("2_25dlh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_hjmj0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
