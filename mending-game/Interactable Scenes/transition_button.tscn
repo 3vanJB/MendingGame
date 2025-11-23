@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2dgub3871pso"]
+
+[ext_resource type="Texture2D" uid="uid://sccn4od7dt0e" path="res://Sprites/Rect_Button_Sheet.png" id="1_p1vir"]
+[ext_resource type="Script" uid="uid://b3f51hoovrdh7" path="res://Scripts/transition_button.gd" id="2_k736k"]
+[ext_resource type="FontFile" uid="uid://c80lwei2ykqy5" path="res://Fonts/ROSSTEN.ttf" id="3_tdtn5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k736k"]
+atlas = ExtResource("1_p1vir")
+region = Rect2(0, 0, 152.5, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1nlr"]
+atlas = ExtResource("1_p1vir")
+region = Rect2(299, 0, 153, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux0pj"]
+atlas = ExtResource("1_p1vir")
+region = Rect2(149.5, 0, 155.5, 100)
+
+[node name="TransitionButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_k736k")
+texture_pressed = SubResource("AtlasTexture_m1nlr")
+texture_hover = SubResource("AtlasTexture_ux0pj")
+script = ExtResource("2_k736k")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 34.0
+offset_right = 129.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("3_tdtn5")
+theme_override_font_sizes/font_size = 30
+text = "Text"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3 uid="uid://cat5ql7pc5mgr"]
+
+[ext_resource type="PackedScene" uid="uid://c2dgub3871pso" path="res://Interactable Scenes/transition_button.tscn" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://vlfnoiti1c7r" path="res://Backgrounds/Dungeon_Drop.png" id="1_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://sccn4od7dt0e" path="res://Sprites/Rect_Button_Sheet.png" id="2_48xlc"]
+[ext_resource type="Script" uid="uid://db4ckslitvtbr" path="res://Scripts/quit.gd" id="3_1ehe0"]
+[ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://Fonts/Ratego-Regular.otf" id="3_n45e2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehe0"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(0, -2.25, 155.5, 102.25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce3w2"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(304.5, 2.25, 144.5, 97.75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = ExtResource("2_48xlc")
+region = Rect2(150, 1.5, 157, 98.5)
+
+[node name="Main Menu" type="Node2D"]
+
+[node name="DungeonDrop" type="Sprite2D" parent="."]
+self_modulate = Color(0.4947322, 0.43569273, 0.7017545, 0.8117647)
+position = Vector2(721.5001, 414)
+scale = Vector2(4.830001, 4.1400003)
+texture = ExtResource("1_ce3w2")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Sprite2D" parent="."]
+self_modulate = Color(0.89291143, 0.8486145, 0.51058304, 1)
+position = Vector2(726.00006, 200.83908)
+rotation = 3.1415927
+scale = Vector2(3.358222, 2.142628)
+texture = ExtResource("2_48xlc")
+hframes = 4
+frame = 1
+
+[node name="Game_Title" type="Label" parent="."]
+offset_left = 560.48975
+offset_top = 158.5621
+offset_right = 873.12024
+offset_bottom = 263.21967
+theme_override_fonts/font = ExtResource("3_n45e2")
+theme_override_font_sizes/font_size = 45
+text = "Dungeon of
+Mending"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+offset_left = 624.0
+offset_top = 308.0
+offset_right = 779.0
+offset_bottom = 640.0
+scale = Vector2(1.2, 1.2)
+theme_override_constants/separation = 15
+
+[node name="Play" parent="ButtonContainer" instance=ExtResource("1_28flt")]
+layout_mode = 2
+changeScene = "res://Scenes/level_1.tscn"
+textString = "Play"
+
+[node name="Credits" parent="ButtonContainer" instance=ExtResource("1_28flt")]
+layout_mode = 2
+changeScene = "res://Scenes/credits.tscn"
+textString = "Credits"
+
+[node name="Quit" type="TextureButton" parent="ButtonContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_1ehe0")
+texture_pressed = SubResource("AtlasTexture_ce3w2")
+texture_hover = SubResource("AtlasTexture_n45e2")
+script = ExtResource("3_1ehe0")
+
+[node name="Label" type="Label" parent="ButtonContainer/Quit"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 37.0
+offset_right = 134.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ButtonContainer/Quit" to="ButtonContainer/Quit" method="_on_pressed"]

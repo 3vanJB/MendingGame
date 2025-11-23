@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsxrgj5yhoyeq"
+path="res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Cancel 1 (Square).mp3-6d9acd0be8f0699a51c8e158c404e1d6.mp3str"
+
+[deps]
+
+source_file="res://Audio/JDSherbert's Audio/JDSherbert - Pixel UI SFX Pack - Cancel 1 (Square).mp3"
+dest_files=["res://.godot/imported/JDSherbert - Pixel UI SFX Pack - Cancel 1 (Square).mp3-6d9acd0be8f0699a51c8e158c404e1d6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
