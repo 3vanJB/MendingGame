@@ -4,3 +4,5 @@
 
 [node name="ArrowButton" type="Node2D"]
 script = ExtResource("1_f4d5w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

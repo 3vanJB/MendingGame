@@ -1,6 +1,5 @@
 class_name ArrowButton
 extends Node2D
-
 signal clicked
 
 var inputAction: StringName

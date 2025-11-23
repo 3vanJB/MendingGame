@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjmj0"]
 size = Vector2(531, 210)
 
-[node name="Root" type="Node"]
+[node name="Root" type="Node2D"]
 script = ExtResource("1_oy5fc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
