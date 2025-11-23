@@ -16,5 +16,5 @@ scale = Vector2(0.4, 0.4)
 position = Vector2(-4, -1)
 shape = SubResource("RectangleShape2D_qy07t")
 
-[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_shape_exited"]
