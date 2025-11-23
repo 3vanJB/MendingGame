@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c80lwei2ykqy5" path="res://fonts/ROSSTEN.ttf" id="1_w8nmq"]
 [ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://fonts/Ratego-Regular.otf" id="4_pj5e7"]
 [ext_resource type="Texture2D" uid="uid://bo3eqn43n1863" path="res://img/png_pixel_heart_pixabay.png" id="4_strlv"]
-[ext_resource type="Texture2D" path="res://Sprites/Rect_Button_Sheet.png" id="5_vkeae"]
+[ext_resource type="Texture2D" uid="uid://db4ctvsyydcic" path="res://img/Rect_Button_Sheet.png" id="5_vkeae"]
 [ext_resource type="Texture2D" uid="uid://dti25g2v80tmv" path="res://img/png_pixel_coin_pixabay.png" id="6_uqw4b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_strlv"]
@@ -181,7 +181,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
 text = "Exit"
 
-[node name="btnLostGoNextContainer" type="VBoxContainer" parent="."]
+[node name="btnGoNextContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 410.0
 offset_top = 313.0
@@ -189,7 +189,7 @@ offset_right = 760.0
 offset_bottom = 531.0
 theme_override_constants/separation = 18
 
-[node name="btnNextGame" type="TextureButton" parent="btnLostGoNextContainer"]
+[node name="btnNextGame" type="TextureButton" parent="btnGoNextContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
@@ -198,7 +198,7 @@ texture_pressed = SubResource("AtlasTexture_uqw4b")
 texture_hover = SubResource("AtlasTexture_gqjqd")
 stretch_mode = 0
 
-[node name="lblNextGame" type="Label" parent="btnLostGoNextContainer/btnNextGame"]
+[node name="lblNextGame" type="Label" parent="btnGoNextContainer/btnNextGame"]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 31.0
@@ -209,7 +209,7 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
 text = "Next Game"
 
-[node name="btnExit" type="TextureButton" parent="btnLostGoNextContainer"]
+[node name="btnExit" type="TextureButton" parent="btnGoNextContainer"]
 process_mode = 3
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
@@ -218,7 +218,7 @@ texture_pressed = SubResource("AtlasTexture_uqw4b")
 texture_hover = SubResource("AtlasTexture_gqjqd")
 stretch_mode = 0
 
-[node name="lblExit" type="Label" parent="btnLostGoNextContainer/btnExit"]
+[node name="lblExit" type="Label" parent="btnGoNextContainer/btnExit"]
 layout_mode = 0
 offset_left = 134.0
 offset_top = 30.0
@@ -333,12 +333,14 @@ theme_override_fonts/font = ExtResource("4_pj5e7")
 theme_override_font_sizes/font_size = 60
 text = "Congratulations!!"
 
+[node name="nodeLevelRoot" type="Node" parent="."]
+
 [connection signal="pressed" from="btnPause" to="." method="_on_btn_pause_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="btnPauseContainer/btnResume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="btnPauseContainer/btnRestart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="btnPauseContainer/btnExit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="btnLostGoNextContainer/btnNextGame" to="." method="_on_nextGame_pressed"]
-[connection signal="pressed" from="btnLostGoNextContainer/btnExit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="btnGoNextContainer/btnNextGame" to="." method="_on_nextGame_pressed"]
+[connection signal="pressed" from="btnGoNextContainer/btnExit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="btnNoLivesContainer/btnBack" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="btnNoLivesContainer/btnExit" to="." method="_on_exit_pressed"]
