@@ -1,10 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0bfwrvv3jmj"]
+[gd_scene load_steps=5 format=3 uid="uid://c0bfwrvv3jmj"]
 
 [ext_resource type="Script" uid="uid://d3w32y0mlkbvb" path="res://minigames/drag_and_drop.gd" id="1_vr7aa"]
+[ext_resource type="PackedScene" uid="uid://dj5hwjwotfupy" path="res://game_elements/spawn_area.tscn" id="4_rt28u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8igk4"]
+radius = 189.39113
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpw8o"]
+size = Vector2(391, 230)
 
 [node name="Root" type="Node"]
 script = ExtResource("1_vr7aa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ObjectSpawnArea" parent="." instance=ExtResource("4_rt28u")]
+position = Vector2(319, 132)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObjectSpawnArea"]
+shape = SubResource("CircleShape2D_8igk4")
+
+[node name="DropZoneSpawnArea" parent="." instance=ExtResource("4_rt28u")]
+
+[node name="CollisionShape2DDZ" type="CollisionShape2D" parent="DropZoneSpawnArea"]
+position = Vector2(-227.5, -142)
+shape = SubResource("RectangleShape2D_lpw8o")
 
 [connection signal="ready" from="." to="." method="_on_ready"]
