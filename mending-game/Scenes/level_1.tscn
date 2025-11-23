@@ -10,6 +10,7 @@
 position = Vector2(576.50006, 318.5)
 scale = Vector2(3.8633335, 3.2250004)
 texture = ExtResource("2_8ffim")
+metadata/_edit_lock_ = true
 
 [node name="TransitionButton" parent="." instance=ExtResource("1_vk57k")]
 offset_left = 940.0
@@ -19,6 +20,14 @@ offset_bottom = 624.0
 changeScene = "res://Scenes/main_menu.tscn"
 textString = "Exit"
 
-[node name="BombPixel" type="Sprite2D" parent="."]
+[node name="Bomb" type="Sprite2D" parent="."]
 position = Vector2(96, 566)
 texture = ExtResource("3_xfk5q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 543.0
+offset_top = 285.0
+offset_right = 626.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 40
+text = "Text"
