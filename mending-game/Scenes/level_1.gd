@@ -3,6 +3,7 @@ extends Node2D
 
 var games = {
 	"diagnose":{"path":"res://minigames/click_correct_arrow.tscn", "text":"Cure!"},
+	"wall":{"path":"res://minigames/drag_and_drop.tscn", "text": "Fix!"}
 	}
 var nextgame = load(games["diagnose"]["path"])
 var nexttext = games["diagnose"]["text"]
@@ -17,6 +18,11 @@ func _ready() -> void:
 	startnextgame()
 
 func startnextgame():
+	HUD.timer.stop()
+	HUD.time_left = 5
+	HUD.updatetime()
+	await get_tree().create_timer(1).timeout
+	
 	if curgame != null:
 		curgame.hide()
 		curgame.queue_free()
@@ -27,9 +33,13 @@ func startnextgame():
 	HUD.plabel.hide()
 	var game = nextgame.instantiate()
 	game.position = spawnmarker.position
+	HUD.timer.start()
 	
 	curgame = game
 	add_child(game)
+	var rgame = games[games.keys()[randi() % games.size()]]
+	nexttext = rgame["text"]
+	nextgame = load(rgame["path"])
 	
 
 func gamelost():

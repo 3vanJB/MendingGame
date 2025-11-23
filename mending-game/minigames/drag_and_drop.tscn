@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0bfwrvv3jmj"]
+[gd_scene load_steps=9 format=3 uid="uid://c0bfwrvv3jmj"]
 
 [ext_resource type="Script" uid="uid://d3w32y0mlkbvb" path="res://minigames/drag_and_drop.gd" id="1_vr7aa"]
 [ext_resource type="Texture2D" uid="uid://bosskkkjmetya" path="res://sprites/wallgame/wall.png" id="3_3lw2b"]
 [ext_resource type="PackedScene" uid="uid://dj5hwjwotfupy" path="res://game_elements/spawn_area.tscn" id="4_rt28u"]
 [ext_resource type="Texture2D" uid="uid://nefljol684c" path="res://sprites/wallgame/brick.png" id="4_vdmki"]
 [ext_resource type="PackedScene" uid="uid://b62fj1faq0s31" path="res://game_elements/draggable_object.tscn" id="5_vq8u2"]
+[ext_resource type="PackedScene" uid="uid://3cl4y3kw3n6w" path="res://game_elements/drop_zone.tscn" id="6_rt28u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3lw2b"]
 size = Vector2(380, 135)
@@ -17,6 +18,7 @@ texture_filter = 1
 script = ExtResource("1_vr7aa")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = -11
 offset_right = 283.0
 offset_bottom = 157.0
 scale = Vector2(3, 3)
@@ -39,23 +41,22 @@ position = Vector2(405, 133)
 shape = SubResource("RectangleShape2D_lpw8o")
 
 [node name="HoleCovers" type="Node2D" parent="."]
-visible = false
 scale = Vector2(3, 3)
 
-[node name="Sprite2D" type="Sprite2D" parent="HoleCovers"]
-position = Vector2(233, 36)
-texture = ExtResource("4_vdmki")
-
-[node name="Sprite2D2" type="Sprite2D" parent="HoleCovers"]
-position = Vector2(169, 66)
+[node name="Sprite2D4" type="Sprite2D" parent="HoleCovers"]
+position = Vector2(41, 66)
 texture = ExtResource("4_vdmki")
 
 [node name="Sprite2D3" type="Sprite2D" parent="HoleCovers"]
 position = Vector2(105, 34)
 texture = ExtResource("4_vdmki")
 
-[node name="Sprite2D4" type="Sprite2D" parent="HoleCovers"]
-position = Vector2(41, 66)
+[node name="Sprite2D2" type="Sprite2D" parent="HoleCovers"]
+position = Vector2(169, 66)
+texture = ExtResource("4_vdmki")
+
+[node name="Sprite2D" type="Sprite2D" parent="HoleCovers"]
+position = Vector2(233, 36)
 texture = ExtResource("4_vdmki")
 
 [node name="Bricks" type="Node2D" parent="."]
@@ -64,6 +65,32 @@ texture = ExtResource("4_vdmki")
 position = Vector2(190, 343)
 
 [node name="DraggableObject2" parent="Bricks" instance=ExtResource("5_vq8u2")]
-position = Vector2(678, 359)
+position = Vector2(679, 338)
+
+[node name="DropZones" type="Node2D" parent="."]
+
+[node name="DropZone" parent="DropZones" instance=ExtResource("6_rt28u")]
+position = Vector2(123, 200)
+monitoring = false
+monitorable = false
+
+[node name="DropZone2" parent="DropZones" instance=ExtResource("6_rt28u")]
+position = Vector2(316, 102)
+monitoring = false
+monitorable = false
+
+[node name="DropZone3" parent="DropZones" instance=ExtResource("6_rt28u")]
+position = Vector2(510, 200)
+monitoring = false
+monitorable = false
+
+[node name="DropZone4" parent="DropZones" instance=ExtResource("6_rt28u")]
+position = Vector2(704, 105.000015)
+monitoring = false
+monitorable = false
 
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="objectDropped" from="DropZones/DropZone" to="." method="_on_drop_zone_object_dropped"]
+[connection signal="objectDropped" from="DropZones/DropZone2" to="." method="_on_drop_zone_2_object_dropped"]
+[connection signal="objectDropped" from="DropZones/DropZone3" to="." method="_on_drop_zone_3_object_dropped"]
+[connection signal="objectDropped" from="DropZones/DropZone4" to="." method="_on_drop_zone_4_object_dropped"]

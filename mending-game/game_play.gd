@@ -9,12 +9,16 @@ var lives : int = 5  # starting lives
 @onready var tlabel = $HBoxContainer/TextureRect/HBoxContainer/timerLabel
 @onready var scorelabel = $Score/scorelabel
 @onready var plabel = $promptcontainer/Prompt
+@onready var timer = $Timer
+@onready var pausecontainer = $CanvasLayer/btnPauseContainer
+
+signal gamelost
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#pass # Replace with function body.
-	
-	$btnPauseContainer.hide()
+	gamelost.connect(SIGNALBUS.ongamelost)
+	pausecontainer.hide()
 	$btnLostContainer.hide()
 	
 	
@@ -30,6 +34,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func updatetime():
+	tlabel.add_theme_color_override("font_color", Color.WHITE)
+	s = time_left % 60
+	tlabel.text = "%2d" % [s]
 
 func _on_timer_timeout() -> void:
 	#pass # Replace with function body.
@@ -48,7 +56,7 @@ func _on_timer_timeout() -> void:
 
 	if time_left == 0:
 		$Timer.stop()
-		$btnLostContainer.show()
+		gamelost.emit()
 		print("Timer finished!")
 
 func incrementscore():
@@ -64,7 +72,7 @@ func _on_btn_pause_pressed() -> void:
 	#pass # Replace with function body.
 	
 	get_tree().paused = true
-	$btnPauseContainer.show()
+	pausecontainer.show()
 	print ("Pause")
 
 
@@ -78,7 +86,7 @@ func _on_exit_pressed() -> void:
 func _on_resume_pressed() -> void:
 	#pass # Replace with function body.
 	get_tree().paused = false
-	$btnPauseContainer.hide()
+	pausecontainer.hide()
 	print ("Resume")
 	
 	
@@ -88,8 +96,8 @@ func _on_restart_pressed() -> void:
 	#pass # Replace with function body.
 	
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://game_play.tscn")
-	
+	#get_tree().change_scene_to_file("res://game_play.tscn")
+	get_tree().reload_current_scene()
 	print ("Restart")
 	
 
