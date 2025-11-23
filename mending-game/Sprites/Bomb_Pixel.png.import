@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ljlqidemkwgl"
-path="res://.godot/imported/Bomb_Pixel.png-0865d9216f3dfea0191a3642f31f03e3.ctex"
+path="res://.godot/imported/Bomb_Pixel.png-401364fb8863356e935e2b8020700af4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Bomb_Pixel.png"
-dest_files=["res://.godot/imported/Bomb_Pixel.png-0865d9216f3dfea0191a3642f31f03e3.ctex"]
+source_file="res://Sprites/Bomb_Pixel.png"
+dest_files=["res://.godot/imported/Bomb_Pixel.png-401364fb8863356e935e2b8020700af4.ctex"]
 
 [params]
 

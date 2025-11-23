@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbtglf2sxkms3"]
+[gd_scene load_steps=10 format=3 uid="uid://bbtglf2sxkms3"]
 
 [ext_resource type="Script" uid="uid://b5yja3uvbunbx" path="res://minigames/click_random_buttons.gd" id="1_oy5fc"]
 [ext_resource type="PackedScene" uid="uid://dj5hwjwotfupy" path="res://game_elements/spawn_area.tscn" id="2_25dlh"]
+[ext_resource type="Texture2D" uid="uid://cydotaa5jpem" path="res://Backgrounds/MiniGame_Background.jpg" id="2_51r7w"]
 [ext_resource type="Texture2D" uid="uid://d4fjdxged7rot" path="res://Sprites/Sword_Sheet.png" id="3_25dlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjmj0"]
@@ -49,12 +50,10 @@ animations = [{
 [node name="Root" type="Node2D"]
 script = ExtResource("1_oy5fc")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -571.0
-offset_top = -323.0
-offset_right = 581.0
-offset_bottom = 304.0
-color = Color(0.051675573, 0.021352831, 0.09295759, 0.827451)
+[node name="MiniGameBackground" type="Sprite2D" parent="."]
+position = Vector2(-5.2500257, 0.4999962)
+scale = Vector2(1.7037691, 1.7558386)
+texture = ExtResource("2_51r7w")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -65,7 +64,6 @@ position = Vector2(-88.75, 4)
 shape = SubResource("RectangleShape2D_hjmj0")
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0.7607843)
 position = Vector2(-22.999998, -42)
 rotation = -0.78094244
 scale = Vector2(5.325479, 5.730605)
