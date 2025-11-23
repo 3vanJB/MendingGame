@@ -1,0 +1,77 @@
+[gd_scene load_steps=12 format=3 uid="uid://do5ptru1curm2"]
+
+[ext_resource type="Script" uid="uid://d2t7d8wcgta6n" path="res://minigames/swipe_game.gd" id="1_mtv5r"]
+[ext_resource type="PackedScene" uid="uid://3cl4y3kw3n6w" path="res://game_elements/drop_zone.tscn" id="2_iun13"]
+[ext_resource type="Texture2D" uid="uid://dwrv8rcu3ph0u" path="res://icon.svg" id="2_lmr70"]
+[ext_resource type="PackedScene" uid="uid://dj5hwjwotfupy" path="res://game_elements/spawn_area.tscn" id="2_ne5l7"]
+[ext_resource type="PackedScene" uid="uid://ddwtl5q1senkn" path="res://game_elements/swipe_detector.tscn" id="3_mcses"]
+[ext_resource type="Texture2D" uid="uid://4ox10npmxs40" path="res://icon_red.svg" id="3_ne5l7"]
+[ext_resource type="PackedScene" uid="uid://n85sk54sby7u" path="res://game_elements/swipable_object.tscn" id="5_lopad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lopad"]
+size = Vector2(932.4139, 262.4138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmqyx"]
+size = Vector2(126, 101.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ne5l7"]
+size = Vector2(83.5, 71.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iun13"]
+size = Vector2(202.25, 159.75)
+
+[node name="Root" type="Node2D"]
+scale = Vector2(0.725, 0.725)
+script = ExtResource("1_mtv5r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2.7586207, -49.65517)
+zoom = Vector2(1.145, 1.145)
+
+[node name="SpawnArea" parent="." instance=ExtResource("2_ne5l7")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
+position = Vector2(1.3792915, -121.2069)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_lopad")
+
+[node name="DropZone" parent="." instance=ExtResource("2_iun13")]
+position = Vector2(2, 0)
+oneTimeDrop = true
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="DropZone"]
+position = Vector2(0, 11.25)
+scale = Vector2(1, 0.81707317)
+texture = ExtResource("3_ne5l7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DropZone"]
+position = Vector2(0, 9.25)
+shape = SubResource("RectangleShape2D_nmqyx")
+
+[node name="Swiper" type="Node2D" parent="."]
+position = Vector2(-2.7586205, -6.896551)
+metadata/_edit_group_ = true
+
+[node name="SwipableObject" parent="Swiper" instance=ExtResource("5_lopad")]
+scale = Vector2(0.99999994, 0.99999994)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Swiper/SwipableObject"]
+position = Vector2(1.999999, 243)
+scale = Vector2(0.71875, 0.5859375)
+texture = ExtResource("2_lmr70")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swiper/SwipableObject"]
+position = Vector2(1.25, 241.25)
+shape = SubResource("RectangleShape2D_ne5l7")
+
+[node name="SwipeDetector" parent="Swiper" instance=ExtResource("3_mcses")]
+scale = Vector2(0.9999999, 0.9999999)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Swiper/SwipeDetector"]
+position = Vector2(5.125, 234.875)
+shape = SubResource("RectangleShape2D_iun13")
+
+[connection signal="objectDropped" from="DropZone" to="." method="_on_drop_zone_object_dropped"]
+[connection signal="swipe" from="Swiper/SwipeDetector" to="." method="_on_swipe_detector_swipe"]

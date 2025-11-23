@@ -17,11 +17,12 @@ static func new_button(
 	return button
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("click") && mouse_inside_area:
-		clicks -= 1
-	if clicks < 1:
-		button_removed.emit()
-		queue_free()
+	if event.is_action_pressed("click") and mouse_inside_area:
+		if clicks <= 1:
+			button_removed.emit()
+			queue_free()
+		elif clicks > 1:
+			clicks -= 1
 
 func _on_mouse_shape_entered(_shape_idx: int) -> void:
 	mouse_inside_area = true
