@@ -10,6 +10,7 @@ var lives : int = 5  # starting lives
 @onready var scorelabel = $Score/scorelabel
 @onready var plabel = $promptcontainer/Prompt
 @onready var timer = $Timer
+@onready var pausecontainer = $CanvasLayer/btnPauseContainer
 
 signal gamelost
 
@@ -17,7 +18,7 @@ signal gamelost
 func _ready() -> void:
 	#pass # Replace with function body.
 	gamelost.connect(SIGNALBUS.ongamelost)
-	$btnPauseContainer.hide()
+	pausecontainer.hide()
 	$btnLostContainer.hide()
 	
 	
@@ -71,7 +72,7 @@ func _on_btn_pause_pressed() -> void:
 	#pass # Replace with function body.
 	
 	get_tree().paused = true
-	$btnPauseContainer.show()
+	pausecontainer.show()
 	print ("Pause")
 
 
@@ -85,7 +86,7 @@ func _on_exit_pressed() -> void:
 func _on_resume_pressed() -> void:
 	#pass # Replace with function body.
 	get_tree().paused = false
-	$btnPauseContainer.hide()
+	pausecontainer.hide()
 	print ("Resume")
 	
 	
@@ -95,8 +96,8 @@ func _on_restart_pressed() -> void:
 	#pass # Replace with function body.
 	
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://game_play.tscn")
-	
+	#get_tree().change_scene_to_file("res://game_play.tscn")
+	get_tree().reload_current_scene()
 	print ("Restart")
 	
 
