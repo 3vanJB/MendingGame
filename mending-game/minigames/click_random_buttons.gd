@@ -2,6 +2,7 @@ extends Node2D
 
 var remaining_buttons: int
 @onready var spawn_area: SpawnArea = $SpawnArea
+var sparkle = preload("res://game_elements/sparkler.tscn")
 
 func _on_ready() -> void:
 	get_viewport().physics_object_picking_sort = true
@@ -13,8 +14,8 @@ func _on_ready() -> void:
 
 func generate_buttons(number:=1) -> void:
 	for n in number:
-		var sprite = Sprite2D.new()
-		sprite.texture = load("res://icon.svg")
+		var sprite = sparkle.instantiate()
+		
 	
 		var shape = RectangleShape2D.new()
 		shape.size = sprite.texture.get_size()
