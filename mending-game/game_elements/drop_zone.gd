@@ -1,7 +1,8 @@
 class_name DropZone
 extends Area2D
 
-signal objectDropped(objectType: int)
+@warning_ignore("unused_signal")
+signal objectDropped
 
 var oneTimeDrop = false
 var objects: Array[DraggableObject] = []
@@ -19,22 +20,7 @@ static func new_drop_zone(
 	return object
 
 func _process(_delta: float) -> void:
-	for object in objects:
-		if not object.dragging:
-			_on_object_dropped(object)
-			
+	pass
 
-func _on_area_entered(area: Area2D) -> void:
-	if is_instance_of(area, DraggableObject):
-		objects.push_back(area)
-
-func _on_area_exited(area: Area2D) -> void:
-	if is_instance_of(area, DraggableObject):
-		objects.erase(area)
-
-func _on_object_dropped(object: DraggableObject) -> void:
-	objects.erase(object)
-	objectDropped.emit(object.type)
-	object.queue_free()
-	if oneTimeDrop:
-		self.queue_free()
+func on_object_dropped() -> void:
+	pass

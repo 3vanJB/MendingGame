@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bobkme60vkbhb" path="res://game_elements/draggable_object.gd" id="1_ui6dg"]
 
 [node name="DraggableObject" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_ui6dg")
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
