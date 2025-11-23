@@ -15,7 +15,7 @@ offset_bottom = 471.0
 texture = ExtResource("2_v4akj")
 
 [node name="stick" parent="." instance=ExtResource("2_bdcvp")]
-position = Vector2(519, 257)
+position = Vector2(514, 276)
 scale = Vector2(3, 3)
 
 [node name="Arrows" type="Node2D" parent="."]

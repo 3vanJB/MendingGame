@@ -11,9 +11,16 @@ var correct_input
 var correct_sprite
 var playing = true
 
+signal gamewon
+signal gamelost
+
+
 func _on_ready() -> void:
 	#var button_blu = load("res://icon.svg")
 	#var button_red = load("res://icon_red.svg")
+	
+	gamewon.connect(SIGNALBUS.ongamewon)
+	gamelost.connect(SIGNALBUS.ongamelost)
 	
 	var correctspriteindex = randi() % possible_inputs.size()
 	correct_sprite = sprites[correctspriteindex]
@@ -73,10 +80,12 @@ func _correct_button_clicked():
 	if playing:
 		print("You Win")
 		stick.get_node("AnimationPlayer").play("win")
+		gamewon.emit()
 		#playing = false
 
 func _wrong_button_clicked():
 	if playing:
 		print("You Lose")
 		stick.get_node("AnimationPlayer").play("fail")
+		gamelost.emit()
 		#playing = false
