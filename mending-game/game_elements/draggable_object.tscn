@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b62fj1faq0s31"]
-
-[ext_resource type="Script" uid="uid://bobkme60vkbhb" path="res://game_elements/draggable_object.gd" id="1_ui6dg"]
-
-[node name="DraggableObject" type="Area2D"]
-script = ExtResource("1_ui6dg")
-
-[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
-[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_shape_exited"]
