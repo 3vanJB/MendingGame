@@ -3,7 +3,7 @@ extends Node
 var drop_zone_count: int
 @onready var object_spawn_area: SpawnArea = $ObjectSpawnArea
 @onready var drop_zone_spawn_area: SpawnArea = $DropZoneSpawnArea
-
+var brick = preload("res://game_elements/draggable_object.tscn")
 
 func _on_ready() -> void:
 	get_viewport().physics_object_picking_sort = true
@@ -48,7 +48,7 @@ func generate_drop_zones(number:=1) -> void:
 		object.set_global_position(drop_zone_spawn_area.get_random_vector())
 		add_child(object)
 		
-func _on_drop_zone_object_dropped(_objectType: int) -> void:
+func _on_drop_zone_object_dropped() -> void:
 	drop_zone_count -= 1
 	
 	print(drop_zone_count)

@@ -241,6 +241,25 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="promptcontainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -181.5
+offset_top = -60.5
+offset_right = 181.5
+offset_bottom = 60.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Prompt" type="Label" parent="promptcontainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 6
+
 [connection signal="pressed" from="HBoxContainer/btnPause" to="." method="_on_btn_pause_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="btnPauseContainer/btnResume" to="." method="_on_resume_pressed"]

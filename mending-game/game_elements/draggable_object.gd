@@ -30,10 +30,13 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if mouse_inside_area && Input.is_action_pressed("click") && not dragging:
 			dragging = true
-	elif Input.is_action_just_released("click"):
+	elif Input.is_action_just_released("click") and dragging == true:
 			dragging = false
+			print("asd")
 			if get_overlapping_areas().size() > 0:
-				print("dass")
+				get_overlapping_areas()[0].objectDropped.emit()
+				get_overlapping_areas()[0].queue_free()
+				self.queue_free()
 			
 	if dragging:
 		self.position = get_viewport().get_mouse_position() + diff
