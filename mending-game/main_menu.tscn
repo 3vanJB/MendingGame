@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://lqk7xeu82263"]
+[gd_scene load_steps=8 format=3 uid="uid://lqk7xeu82263"]
 
 [ext_resource type="Script" uid="uid://ckua7rqkhaph0" path="res://main_menu.gd" id="1_7vrkn"]
-[ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://Ratego-Regular.otf" id="2_7vrkn"]
+[ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://Fonts/Ratego-Regular.otf" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://vlfnoiti1c7r" path="res://Backgrounds/Dungeon_Drop.png" id="2_fu7sn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(1, 1, 1, 1)
@@ -32,6 +33,12 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_7vrkn")
+
+[node name="DungeonDrop" type="Sprite2D" parent="."]
+self_modulate = Color(0.8766036, 0.8601105, 0.99090344, 0.8352941)
+position = Vector2(728, 407.00003)
+scale = Vector2(4.913334, 4.14)
+texture = ExtResource("2_fu7sn")
 
 [node name="btnContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
