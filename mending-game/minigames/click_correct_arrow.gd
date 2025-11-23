@@ -86,13 +86,16 @@ func _correct_button_clicked():
 		get_tree().call_group("arrowbutton", "disable")
 		stick.get_node("AnimationPlayer").play("win")
 		await get_tree().create_timer(1).timeout
+		hide()
 		gamewon.emit()
 		playing = false
 
 func _wrong_button_clicked():
 	if playing:
 		print("You Lose")
+		get_tree().call_group("arrowbutton", "disable")
 		stick.get_node("AnimationPlayer").play("fail")
 		await get_tree().create_timer(1).timeout
+		hide()
 		gamelost.emit()
 		playing = false
