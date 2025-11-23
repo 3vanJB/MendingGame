@@ -11,10 +11,12 @@ var lives : int = 5  # starting lives
 @onready var plabel = $promptcontainer/Prompt
 @onready var timer = $Timer
 
+signal gamelost
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#pass # Replace with function body.
-	
+	gamelost.connect(SIGNALBUS.ongamelost)
 	$btnPauseContainer.hide()
 	$btnLostContainer.hide()
 	
@@ -31,6 +33,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func updatetime():
+	tlabel.add_theme_color_override("font_color", Color.WHITE)
+	s = time_left % 60
+	tlabel.text = "%2d" % [s]
 
 func _on_timer_timeout() -> void:
 	#pass # Replace with function body.
@@ -49,7 +55,7 @@ func _on_timer_timeout() -> void:
 
 	if time_left == 0:
 		$Timer.stop()
-		$btnLostContainer.show()
+		gamelost.emit()
 		print("Timer finished!")
 
 func incrementscore():

@@ -20,6 +20,7 @@ func _ready() -> void:
 func startnextgame():
 	HUD.timer.stop()
 	HUD.time_left = 5
+	HUD.updatetime()
 	await get_tree().create_timer(1).timeout
 	
 	if curgame != null:
@@ -39,6 +40,7 @@ func startnextgame():
 	var rgame = games[games.keys()[randi() % games.size()]]
 	nexttext = rgame["text"]
 	nextgame = load(rgame["path"])
+	
 
 func gamelost():
 	HUD.lives -= 1

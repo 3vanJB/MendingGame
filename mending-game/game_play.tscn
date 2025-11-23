@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bbop0k6xsfd2v" path="res://sprites/vector_pixel_heart_pixabay.png" id="2_sr1gb"]
 [ext_resource type="Texture2D" uid="uid://ljlqidemkwgl" path="res://sprites/Bomb_Pixel.png" id="2_vkeae"]
 [ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://Fonts/Ratego-Regular.otf" id="4_pj5e7"]
-[ext_resource type="Texture2D" uid="uid://sccn4od7dt0e" path="res://Sprites/Rect_Button_Sheet.png" id="6_strlv"]
-[ext_resource type="Texture2D" uid="uid://dov6ytl0hayl3" path="res://Sprites/Sparkle_Singlar.png" id="7_uqw4b"]
+[ext_resource type="Texture2D" uid="uid://sccn4od7dt0e" path="res://sprites/Rect_Button_Sheet.png" id="6_strlv"]
+[ext_resource type="Texture2D" uid="uid://dov6ytl0hayl3" path="res://sprites/Sparkle_Singlar.png" id="7_uqw4b"]
 
 [sub_resource type="Theme" id="Theme_pj5e7"]
 
