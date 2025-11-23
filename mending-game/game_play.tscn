@@ -30,25 +30,6 @@ corner_radius_bottom_left = 7
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pvdjo"]
 
-[sub_resource type="Theme" id="Theme_pj5e7"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkeae"]
-bg_color = Color(0, 0, 0, 0.101960786)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_strlv"]
-atlas = ExtResource("5_vkeae")
-region = Rect2(0, 0, 150, 100)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uqw4b"]
-atlas = ExtResource("5_vkeae")
-region = Rect2(302, -1, 154, 99)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gqjqd"]
-atlas = ExtResource("5_vkeae")
-region = Rect2(156, 0, 145, 100)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0mbhd"]
-
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -90,7 +71,7 @@ offset_left = 20.0
 offset_top = 13.0
 offset_right = 94.30078
 offset_bottom = 79.0
-texture = ExtResource("4_strlv")
+texture = ExtResource("2_sr1gb")
 expand_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
@@ -136,86 +117,72 @@ text = "Pause"
 [node name="btnPauseContainer" type="VBoxContainer" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 409.0
-offset_top = 243.0
-offset_right = 759.0
-offset_bottom = 579.0
+offset_left = 449.0
+offset_top = 268.0
+offset_right = 692.0
+offset_bottom = 563.0
 theme_override_constants/separation = 18
 
-[node name="btnResume" type="TextureButton" parent="btnPauseContainer"]
+[node name="btnResume" type="Button" parent="btnPauseContainer"]
 process_mode = 3
-custom_minimum_size = Vector2(350, 100)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
-
-[node name="lblResume" type="Label" parent="btnPauseContainer/btnResume"]
-layout_mode = 0
-offset_left = 103.0
-offset_top = 31.0
-offset_right = 268.0
-offset_bottom = 75.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_pj5e7")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_strlv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uqw4b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gqjqd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pvdjo")
 text = "Resume"
 
-[node name="btnRestart" type="TextureButton" parent="btnPauseContainer"]
+[node name="btnRestart" type="Button" parent="btnPauseContainer"]
 process_mode = 3
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
-
-[node name="lblRestart" type="Label" parent="btnPauseContainer/btnRestart"]
-layout_mode = 0
-offset_left = 102.0
-offset_top = 28.0
-offset_right = 267.0
-offset_bottom = 72.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_pj5e7")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_strlv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uqw4b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gqjqd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pvdjo")
 text = "Restart"
 
-[node name="btnExit" type="TextureButton" parent="btnPauseContainer"]
+[node name="btnExit" type="Button" parent="btnPauseContainer"]
 process_mode = 3
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
-
-[node name="lblExit" type="Label" parent="btnPauseContainer/btnExit"]
-layout_mode = 0
-offset_left = 136.0
-offset_top = 32.0
-offset_right = 243.0
-offset_bottom = 76.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_pj5e7")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_strlv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uqw4b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gqjqd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pvdjo")
 text = "Exit"
 
-[node name="btnLostGoNextContainer" type="VBoxContainer" parent="."]
+[node name="btnLostContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 0
-offset_left = 410.0
+offset_left = 450.0
 offset_top = 313.0
-offset_right = 760.0
-offset_bottom = 531.0
+offset_right = 693.0
+offset_bottom = 506.0
 theme_override_constants/separation = 18
 
-[node name="btnNextGame" type="TextureButton" parent="btnLostGoNextContainer"]
+[node name="btnRestart2" type="Button" parent="btnLostContainer"]
 process_mode = 3
-custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_pj5e7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_strlv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uqw4b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gqjqd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pvdjo")
+text = "Restart"
 
 [node name="btnExit" type="Button" parent="btnLostContainer"]
 process_mode = 3
@@ -232,35 +199,29 @@ text = "Exit"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 visible = false
-[node name="lblNextGame" type="Label" parent="btnLostGoNextContainer/btnNextGame"]
 layout_mode = 0
-offset_left = 75.0
-offset_top = 31.0
-offset_right = 304.0
-offset_bottom = 75.0
-theme_override_fonts/font = ExtResource("4_pj5e7")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
-text = "Next Game"
+offset_left = 306.0
+offset_top = 365.0
+offset_right = 975.0
+offset_bottom = 646.0
 
-[node name="btnExit" type="TextureButton" parent="btnLostGoNextContainer"]
-process_mode = 3
-custom_minimum_size = Vector2(350, 0)
+[node name="lblNoLives" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
+theme_override_font_sizes/font_size = 60
+text = "No more lives!!
+Going back ...."
 
-[node name="lblExit" type="Label" parent="btnLostGoNextContainer/btnExit"]
-layout_mode = 0
-offset_left = 134.0
-offset_top = 30.0
-offset_right = 241.0
-offset_bottom = 74.0
+[node name="btnExit" type="Button" parent="VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_pj5e7")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_strlv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uqw4b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gqjqd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pvdjo")
 text = "Exit"
 
 [node name="Score" type="HBoxContainer" parent="."]
@@ -272,83 +233,6 @@ offset_bottom = 813.0
 [node name="scorelabel" type="Label" parent="Score"]
 layout_mode = 2
 size_flags_horizontal = 6
-[node name="btnNoLivesContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 349.0
-offset_top = 217.0
-offset_right = 854.0
-offset_bottom = 603.0
-theme_override_constants/separation = 18
-
-[node name="lblNoLives" type="Label" parent="btnNoLivesContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("4_pj5e7")
-theme_override_font_sizes/font_size = 60
-text = "No more lives!!"
-
-[node name="btnBack" type="TextureButton" parent="btnNoLivesContainer"]
-process_mode = 3
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
-
-[node name="lblBack" type="Label" parent="btnNoLivesContainer/btnBack"]
-layout_mode = 0
-offset_left = 199.0
-offset_top = 34.0
-offset_right = 306.0
-offset_bottom = 78.0
-theme_override_fonts/font = ExtResource("4_pj5e7")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
-text = "Back"
-
-[node name="btnExit" type="TextureButton" parent="btnNoLivesContainer"]
-process_mode = 3
-custom_minimum_size = Vector2(350, 0)
-layout_mode = 2
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
-
-[node name="lblExit" type="Label" parent="btnNoLivesContainer/btnExit"]
-layout_mode = 0
-offset_left = 199.0
-offset_top = 34.0
-offset_right = 306.0
-offset_bottom = 78.0
-theme_override_fonts/font = ExtResource("4_pj5e7")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_0mbhd")
-text = "Exit"
-
-[node name="lblLostMsg" type="Label" parent="."]
-layout_mode = 0
-offset_left = 252.0
-offset_top = 211.0
-offset_right = 983.0
-offset_bottom = 296.0
-theme_override_fonts/font = ExtResource("4_pj5e7")
-theme_override_font_sizes/font_size = 60
-text = "Better luck next time!!"
-
-[node name="coinContainer" type="NinePatchRect" parent="."]
-layout_mode = 0
-offset_left = 171.0
-offset_top = 10.0
-offset_right = 334.0
-offset_bottom = 104.0
-
-[node name="coinNumber" type="Label" parent="coinContainer"]
-layout_mode = 0
-offset_left = 41.0
-offset_top = 22.0
-offset_right = 140.0
-offset_bottom = 68.0
 theme = SubResource("Theme_pj5e7")
 theme_override_fonts/font = ExtResource("1_w8nmq")
 theme_override_font_sizes/font_size = 50
@@ -362,7 +246,5 @@ vertical_alignment = 1
 [connection signal="pressed" from="btnPauseContainer/btnResume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="btnPauseContainer/btnRestart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="btnPauseContainer/btnExit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="btnLostGoNextContainer/btnNextGame" to="." method="_on_nextGame_pressed"]
-[connection signal="pressed" from="btnLostGoNextContainer/btnExit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="btnNoLivesContainer/btnBack" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="btnNoLivesContainer/btnExit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="btnLostContainer/btnRestart2" to="." method="_on_restart2_pressed"]
+[connection signal="pressed" from="btnLostContainer/btnExit" to="." method="_on_exit_pressed"]

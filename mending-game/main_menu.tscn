@@ -1,25 +1,31 @@
 [gd_scene load_steps=9 format=3 uid="uid://lqk7xeu82263"]
 
 [ext_resource type="Script" uid="uid://ckua7rqkhaph0" path="res://main_menu.gd" id="1_7vrkn"]
-[ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://fonts/Ratego-Regular.otf" id="2_7vrkn"]
-[ext_resource type="Texture2D" path="res://Sprites/Rect_Button_Sheet.png" id="3_fu7sn"]
+[ext_resource type="FontFile" uid="uid://bm36mab8f0nd3" path="res://Ratego-Regular.otf" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://daex7bh83cxj2" path="res://title_bg.png" id="2_fu7sn"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jix8l"]
+texture = ExtResource("2_fu7sn")
 modulate_color = Color(0.559752, 0.559752, 0.559752, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jix8l"]
-atlas = ExtResource("3_fu7sn")
-region = Rect2(0, 0, 150, 100)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_glbon"]
-atlas = ExtResource("3_fu7sn")
-region = Rect2(302, -1, 154, 99)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nlkkf"]
-atlas = ExtResource("3_fu7sn")
-region = Rect2(156, 0, 145, 100)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glbon"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,47 +47,34 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_jix8l")
 
 [node name="btnContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 390.0
-offset_top = 265.0
-offset_right = 740.0
-offset_bottom = 560.0
+offset_left = 443.0
+offset_top = 266.0
+offset_right = 686.0
+offset_bottom = 561.0
 theme_override_constants/separation = 18
 
-[node name="btnStart" type="TextureButton" parent="btnContainer"]
-custom_minimum_size = Vector2(350, 0)
+[node name="btnStart" type="Button" parent="btnContainer"]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_jix8l")
-texture_pressed = SubResource("AtlasTexture_glbon")
-texture_hover = SubResource("AtlasTexture_nlkkf")
-stretch_mode = 0
-
-[node name="lblStart" type="Label" parent="btnContainer/btnStart"]
-layout_mode = 0
-offset_left = 129.0
-offset_top = 29.0
-offset_right = 236.0
-offset_bottom = 73.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_glbon")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fu7sn")
 text = "Start"
 
-[node name="btnExit" type="TextureButton" parent="btnContainer"]
+[node name="btnExit" type="Button" parent="btnContainer"]
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_jix8l")
-texture_pressed = SubResource("AtlasTexture_glbon")
-texture_hover = SubResource("AtlasTexture_nlkkf")
-stretch_mode = 0
-
-[node name="lblExit" type="Label" parent="btnContainer/btnExit"]
-layout_mode = 0
-offset_left = 137.0
-offset_top = 29.0
-offset_right = 244.0
-offset_bottom = 73.0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_7vrkn")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/focus = SubResource("StyleBoxEmpty_glbon")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rhts7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_06t4h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fu7sn")
 text = "Exit"
 
 [node name="titleName" type="Label" parent="."]

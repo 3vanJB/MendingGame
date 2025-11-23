@@ -14,23 +14,20 @@ func _ready() -> void:
 	#pass # Replace with function body.
 	
 	$btnPauseContainer.hide()
-	$btnLostGoNextContainer.hide()
-	$btnNoLivesContainer.hide()
-	$lblLostMsg.hide()
-	$lblWinMsg.hide()
-		
+	$btnLostContainer.hide()
+	
+	
 	#Engine.time_scale = 0.2 
 	tlabel.text = "%2d" % [s]
 	#get_node("Timer").start()
 	
 	update_lives_display()  # show initial lives
-
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
 
 
 func _on_timer_timeout() -> void:
@@ -50,13 +47,8 @@ func _on_timer_timeout() -> void:
 
 	if time_left == 0:
 		$Timer.stop()
-		# Decrease lives
-		lives -= 1
-		update_lives_display()
-		$lblLostMsg.show()
-		$btnLostGoNextContainer.show()
+		$btnLostContainer.show()
 		print("Timer finished!")
-		
 
 func incrementscore():
 	score += 1
@@ -75,12 +67,6 @@ func _on_btn_pause_pressed() -> void:
 	print ("Pause")
 
 
-
-func update_lives_display() -> void:
-	$lifeContainer/lifeNumber.text = str(lives)
-
-
-
 func _on_exit_pressed() -> void:
 	#pass # Replace with function body.
 	
@@ -88,14 +74,13 @@ func _on_exit_pressed() -> void:
 	get_tree().quit()
 
 
-
 func _on_resume_pressed() -> void:
 	#pass # Replace with function body.
-	
 	get_tree().paused = false
 	$btnPauseContainer.hide()
 	print ("Resume")
-
+	
+	
 
 
 func _on_restart_pressed() -> void:
@@ -105,30 +90,22 @@ func _on_restart_pressed() -> void:
 	get_tree().change_scene_to_file("res://game_play.tscn")
 	
 	print ("Restart")
-
-
-
-func _on_back_pressed() -> void:
-	#pass # Replace with function body.
 	
-	get_tree().change_scene_to_file("res://game_play.tscn")
 
 
-func _on_nextGame_pressed() -> void:
+func _on_exit2_pressed() -> void:
 	#pass # Replace with function body.
+		
+	print ("Exit after lost")
+	get_tree().quit()
 
-	get_tree().change_scene_to_file("res://minigames/click_random_buttons.tscn")
 
-
-# =========================================
-
-# Restart level when time reaches 0
-func _on_restartLevel_pressed() -> void:
+func _on_restart2_pressed() -> void:
 	#pass # Replace with function body.
 	
 	$btnLostContainer.hide()
 	
-	# Decrease lives
+		# Decrease lives
 	lives -= 1
 	update_lives_display()
 

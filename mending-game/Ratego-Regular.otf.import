@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c80lwei2ykqy5"
-path="res://.godot/imported/ROSSTEN.ttf-3b06ffc708093a89e3d8560596d8a01d.fontdata"
+uid="uid://cywj3s24dmrop"
+path="res://.godot/imported/Ratego-Regular.otf-6c14c92de7abb2c7ac8a08385181a580.fontdata"
 
 [deps]
 
-source_file="res://fonts/ROSSTEN.ttf"
-dest_files=["res://.godot/imported/ROSSTEN.ttf-3b06ffc708093a89e3d8560596d8a01d.fontdata"]
+source_file="res://Ratego-Regular.otf"
+dest_files=["res://.godot/imported/Ratego-Regular.otf-6c14c92de7abb2c7ac8a08385181a580.fontdata"]
 
 [params]
 
