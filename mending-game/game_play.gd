@@ -114,6 +114,11 @@ func _on_restart2_pressed() -> void:
 
 	print("Restart after lost")
 
+	if lives <= 0:
+		get_tree().change_scene_to_file("res://main_menu.tscn")
+		
+		print("Game Over! Returning to main menu")
+		return  # exit the function so timer doesn't restar
 
 
 func update_lives_display() -> void:
