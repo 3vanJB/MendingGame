@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ktm2f4j58qej"]
+[gd_scene load_steps=17 format=3 uid="uid://ktm2f4j58qej"]
 
 [ext_resource type="Script" uid="uid://dnkavslurnraj" path="res://game_play.gd" id="1_sr1gb"]
 [ext_resource type="FontFile" uid="uid://c80lwei2ykqy5" path="res://Fonts/ROSSTEN.ttf" id="1_w8nmq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ljlqidemkwgl" path="res://Sprites/Bomb_Pixel.png" id="2_vkeae"]
 [ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://Fonts/Ratego-Regular.otf" id="4_pj5e7"]
 [ext_resource type="Texture2D" uid="uid://sccn4od7dt0e" path="res://Sprites/Rect_Button_Sheet.png" id="6_strlv"]
+[ext_resource type="Texture2D" uid="uid://dov6ytl0hayl3" path="res://Sprites/Sparkle_Singlar.png" id="7_uqw4b"]
 
 [sub_resource type="Theme" id="Theme_pj5e7"]
 
@@ -246,8 +247,9 @@ text = "Exit"
 
 [node name="Score" type="HBoxContainer" parent="."]
 layout_mode = 0
+offset_left = 37.0
 offset_top = 692.0
-offset_right = 231.0
+offset_right = 268.0
 offset_bottom = 813.0
 
 [node name="scorelabel" type="Label" parent="Score"]
@@ -279,6 +281,15 @@ grow_vertical = 2
 visible = false
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_colors/font_outline_color = Color(0.1398857, 0.098867215, 0.2863185, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_pj5e7")
+theme_override_font_sizes/font_size = 80
+text = "Text"
+
+[node name="SparkleSinglar" type="Sprite2D" parent="."]
+position = Vector2(69, 744)
+texture = ExtResource("7_uqw4b")
 
 [connection signal="pressed" from="HBoxContainer/btnPause" to="." method="_on_btn_pause_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

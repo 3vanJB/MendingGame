@@ -7,13 +7,13 @@ const default_music_db := 0.0 # This is for normal volume
 var current_music_player : AudioStreamPlayer # the current player
 
 @onready var audio_stream_01 : AudioStreamPlayer = $MusicPlayer
-@onready var audio_stream_02 : AudioStreamPlayer = $SFXPlayer
-
+@onready var audio_stream_02 : AudioStreamPlayer = $ClickPlayer
+@onready var fail_sound : AudioStreamPlayer =$FailPlayer
 func _ready() -> void:
 	current_music_player = audio_stream_01
-	audio_stream_01.autoplay
+	#audio_stream_01.autoplay
 	audio_stream_01.pitch_scale = 1
-	
+
 func music_setPitch(pitch:float):
 	if pitch >= 2.5:
 		audio_stream_01.pitch_scale = 2.5

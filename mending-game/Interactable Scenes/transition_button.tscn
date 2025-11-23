@@ -17,8 +17,8 @@ atlas = ExtResource("1_p1vir")
 region = Rect2(149.5, 0, 155.5, 100)
 
 [node name="TransitionButton" type="TextureButton"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 155.0
+offset_bottom = 100.0
 texture_normal = SubResource("AtlasTexture_k736k")
 texture_pressed = SubResource("AtlasTexture_m1nlr")
 texture_hover = SubResource("AtlasTexture_ux0pj")
@@ -35,4 +35,8 @@ theme_override_font_sizes/font_size = 30
 text = "Text"
 horizontal_alignment = 1
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
