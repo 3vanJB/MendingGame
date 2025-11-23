@@ -19,6 +19,9 @@ color = Color(0.97582966, 0.7002122, 0.6254684, 0.69411767)
 metadata/_edit_lock_ = true
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -58,9 +61,15 @@ theme_override_font_sizes/font_size = 30
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 text = "Evan: Artist, Programming
 Will: Artist, Programming, Audio
 Jason: Programming
+=======
+text = "Evan: Art, Programming
+Will: Art, Programming, Music
+Jason: Coding, Sword Minigame
+>>>>>>> Stashed changes
 =======
 text = "Evan: Art, Programming
 Will: Art, Programming, Music
