@@ -1,11 +1,13 @@
 extends Control
 
-var time_left : int = 10 # starting time
+var time_left : int = 5 # starting time
 var m = time_left / 60
 var s = time_left % 60
+var score = 0
 
-var lives : int = 3  # starting lives
-
+var lives : int = 5  # starting lives
+@onready var tlabel = $HBoxContainer/TextureRect/HBoxContainer/timerLabel
+@onready var scorelabel = $Score/scorelabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,8 +18,8 @@ func _ready() -> void:
 	
 	
 	#Engine.time_scale = 0.2 
-	$timerLabel.text = "%02d:%02d" % [m, s]
-	get_node("Timer").start()
+	tlabel.text = "%2d" % [s]
+	#get_node("Timer").start()
 	
 	update_lives_display()  # show initial lives
 	
@@ -35,19 +37,26 @@ func _on_timer_timeout() -> void:
 	
 	m = time_left / 60
 	s = time_left % 60
-	$timerLabel.text = "%02d:%02d" % [m, s]
+	tlabel.text = "%2d" % [s]
 
 	# Change color in last 5 seconds
 	if time_left <= 5:
-		$timerLabel.add_theme_color_override("font_color", Color.RED)
+		tlabel.add_theme_color_override("font_color", Color.RED)
 	else:
-		$timerLabel.add_theme_color_override("font_color", Color.WHITE)
+		tlabel.add_theme_color_override("font_color", Color.WHITE)
 
 	if time_left == 0:
 		$Timer.stop()
 		$btnLostContainer.show()
 		print("Timer finished!")
 
+func incrementscore():
+	score += 1
+	scorelabel.text = str(score)
+
+func resetscore():
+	score = 0
+	scorelabel.text = "0"
 
 
 func _on_btn_pause_pressed() -> void:
@@ -104,7 +113,7 @@ func _on_restart2_pressed() -> void:
 	time_left = 10  # or your starting timer
 	m = time_left / 60
 	s = time_left % 60
-	$timerLabel.text = "%02d:%02d" % [m, s]
+	tlabel.text = "%02d:%02d" % [m, s]
 
 	# Hide lost menu
 	$btnLostContainer.hide()
@@ -122,4 +131,4 @@ func _on_restart2_pressed() -> void:
 
 
 func update_lives_display() -> void:
-	$lifeContainer/lifeNumber.text = str(lives)
+	$HBoxContainer/lifeContainer/lifeNumber.text = str(lives)

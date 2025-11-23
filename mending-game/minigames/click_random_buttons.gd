@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var remaining_buttons: int
 @onready var spawn_area: SpawnArea = $SpawnArea

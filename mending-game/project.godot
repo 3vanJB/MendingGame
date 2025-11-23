@@ -11,9 +11,18 @@ config_version=5
 [application]
 
 config/name="MendingGame"
-run/main_scene="uid://bbtglf2sxkms3"
+run/main_scene="uid://dusqvx4xwe7fh"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SIGNALBUS="*res://Scripts/SIGNALBUS.gd"
+
+[display]
+
+window/size/viewport_width=1439
+window/size/viewport_height=812
 
 [input]
 
