@@ -14,6 +14,8 @@ signal gamelost
 
 
 func _ready() -> void:
+	gamewon.connect(SIGNALBUS.ongamewon)
+	
 	get_viewport().physics_object_picking_sort = true
 	get_viewport().physics_object_picking_first_only = true
 	var zoneindex = avaliablezones[randi() % avaliablezones.size()]
