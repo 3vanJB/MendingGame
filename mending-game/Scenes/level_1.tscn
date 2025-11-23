@@ -1,24 +1,90 @@
-[gd_scene load_steps=4 format=3 uid="uid://dusqvx4xwe7fh"]
+[gd_scene load_steps=8 format=3 uid="uid://dusqvx4xwe7fh"]
 
-[ext_resource type="PackedScene" uid="uid://c2dgub3871pso" path="res://Interactable Scenes/transition_button.tscn" id="1_vk57k"]
+[ext_resource type="Script" uid="uid://dkocj2ph4xnku" path="res://Scripts/Dungeon.gd" id="1_7p6j4"]
 [ext_resource type="Texture2D" uid="uid://vlfnoiti1c7r" path="res://Backgrounds/Dungeon_Drop.png" id="2_8ffim"]
-[ext_resource type="Texture2D" uid="uid://ljlqidemkwgl" path="res://Sprites/Bomb_Pixel.png" id="3_xfk5q"]
+[ext_resource type="PackedScene" uid="uid://btpxjff5wecux" path="res://Scenes/minigame_ui.tscn" id="3_xfk5q"]
+
+[sub_resource type="Animation" id="Animation_evi0p"]
+resource_name = "Appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Prompt:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7p6j4"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Prompt:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.93333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6444e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Prompt:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsmp6"]
+_data = {
+&"Appear": SubResource("Animation_evi0p"),
+&"Fade": SubResource("Animation_7p6j4"),
+&"RESET": SubResource("Animation_6444e")
+}
 
 [node name="Level_1" type="Node2D"]
+script = ExtResource("1_7p6j4")
 
 [node name="DungeonDrop" type="Sprite2D" parent="."]
 position = Vector2(576.50006, 318.5)
 scale = Vector2(3.8633335, 3.2250004)
 texture = ExtResource("2_8ffim")
+metadata/_edit_lock_ = true
 
-[node name="TransitionButton" parent="." instance=ExtResource("1_vk57k")]
-offset_left = 940.0
-offset_top = 524.0
-offset_right = 1092.0
-offset_bottom = 624.0
-changeScene = "res://Scenes/main_menu.tscn"
-textString = "Exit"
+[node name="Prompt" type="Label" parent="."]
+offset_left = 543.0
+offset_top = 285.0
+offset_right = 626.0
+offset_bottom = 340.0
+theme_override_font_sizes/font_size = 40
+text = "Text"
 
-[node name="BombPixel" type="Sprite2D" parent="."]
-position = Vector2(96, 566)
-texture = ExtResource("3_xfk5q")
+[node name="PromptPlayer" type="AnimationPlayer" parent="Prompt"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_lsmp6")
+}
+speed_scale = 1.691
+
+[node name="CanvasLayer" parent="Prompt" instance=ExtResource("3_xfk5q")]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="MinigamePoint" type="Marker2D" parent="."]
+position = Vector2(590, 319)
