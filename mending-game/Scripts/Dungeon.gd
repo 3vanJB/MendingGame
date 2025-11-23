@@ -1,6 +1,7 @@
 extends Node2D
 @onready var game_marker: Marker2D = $MinigamePoint
 @onready var player:AnimationPlayer = $Prompt/PromptPlayer
+@onready var timer: Timer = $Timer
 var collection :Dictionary={
 	1:"res://minigames/click_correct_arrow.tscn",
 	2:"res://minigames/click_random_buttons.tscn"
@@ -17,9 +18,7 @@ func minigame():
 		$Prompt.text = "Click!"
 	elif chance == 2:
 		$Prompt.text = "Diagnose!"
+	timer.start()
+	#if timer.
 	#*/
 	player.play("Fade")
-	$"Game Timer"
-	var scene = load(collection[chance])
-	var instance = scene.instantiate()
-	add_child(instance)

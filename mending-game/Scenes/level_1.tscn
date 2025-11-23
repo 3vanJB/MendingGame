@@ -83,7 +83,6 @@ speed_scale = 1.691
 [node name="CanvasLayer" parent="Prompt" instance=ExtResource("3_xfk5q")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 8.0
 autostart = true
 
 [node name="MinigamePoint" type="Marker2D" parent="."]
