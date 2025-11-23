@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://b5yja3uvbunbx" path="res://minigames/click_random_buttons.gd" id="1_oy5fc"]
 [ext_resource type="PackedScene" uid="uid://dj5hwjwotfupy" path="res://game_elements/spawn_area.tscn" id="2_25dlh"]
-[ext_resource type="Texture2D" uid="uid://c8t2xsh1lw4yl" path="res://Sprites/Sword_Sheet.png" id="3_25dlh"]
+[ext_resource type="Texture2D" uid="uid://d4fjdxged7rot" path="res://Sprites/Sword_Sheet.png" id="3_25dlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjmj0"]
-size = Vector2(531, 210)
+size = Vector2(714.5, 204)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51r7w"]
 atlas = ExtResource("3_25dlh")
@@ -49,20 +49,26 @@ animations = [{
 [node name="Root" type="Node"]
 script = ExtResource("1_oy5fc")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -571.0
+offset_top = -323.0
+offset_right = 581.0
+offset_bottom = 304.0
+color = Color(0.051675573, 0.021352831, 0.09295759, 0.827451)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="SpawnArea" parent="." instance=ExtResource("2_25dlh")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
-position = Vector2(3, 1)
+position = Vector2(-88.75, 4)
 shape = SubResource("RectangleShape2D_hjmj0")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.7607843)
+position = Vector2(-22.999998, -42)
 rotation = -0.78094244
-scale = Vector2(3.471875, 3.7696164)
+scale = Vector2(5.325479, 5.730605)
 sprite_frames = SubResource("SpriteFrames_q7f7s")
 
 [connection signal="ready" from="." to="." method="_on_ready"]

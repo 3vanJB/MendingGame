@@ -14,7 +14,7 @@ func _on_ready() -> void:
 func generate_buttons(number:=1) -> void:
 	for n in number:
 		var sprite = Sprite2D.new()
-		sprite.texture = load("res://icon_red.svg")
+		sprite.texture = load("res://Sprites/Sparkle_Singlar.png")
 	
 		var shape = RectangleShape2D.new()
 		shape.size = sprite.texture.get_size()
