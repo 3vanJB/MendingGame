@@ -1,10 +1,5 @@
 extends Node2D
 
-<<<<<<< HEAD
-=======
-signal minigame_finished
-
->>>>>>> Wanda
 const possible_inputs = ["up", "down", "left", "right"]
 @onready var arrows = $Arrows
 @onready var stick = $stick
@@ -83,10 +78,6 @@ func _create_button(inputEvent: StringName, texture: Texture2D) -> ArrowButton:
 
 func _correct_button_clicked():
 	if playing:
-<<<<<<< HEAD
-=======
-		minigame_finished.emit()
->>>>>>> Wanda
 		print("You Win")
 		stick.get_node("AnimationPlayer").play("win")
 		await get_tree().create_timer(1).timeout

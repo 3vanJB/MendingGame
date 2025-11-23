@@ -1,10 +1,5 @@
 extends Node
 
-<<<<<<< HEAD
-=======
-signal minigame_finished
-
->>>>>>> Wanda
 var drop_zone_count: int
 @onready var object_spawn_area: SpawnArea = $ObjectSpawnArea
 @onready var drop_zone_spawn_area: SpawnArea = $DropZoneSpawnArea
@@ -58,8 +53,4 @@ func _on_drop_zone_object_dropped(_objectType: int) -> void:
 	
 	print(drop_zone_count)
 	if drop_zone_count == 0:
-<<<<<<< HEAD
-=======
-		minigame_finished.emit()
->>>>>>> Wanda
 		print("You Win!")

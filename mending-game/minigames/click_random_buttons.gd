@@ -1,10 +1,5 @@
 extends Node2D
 
-<<<<<<< HEAD
-=======
-signal minigame_finished
-
->>>>>>> Wanda
 var remaining_buttons: int
 @onready var spawn_area: SpawnArea = $SpawnArea
 
@@ -35,8 +30,4 @@ func generate_buttons(number:=1) -> void:
 func _on_button_removed() -> void:
 	remaining_buttons -= 1
 	if remaining_buttons == 0:
-<<<<<<< HEAD
-=======
-		minigame_finished.emit()
->>>>>>> Wanda
 		print("You Win!")

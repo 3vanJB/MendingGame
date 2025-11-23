@@ -1,7 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://ktm2f4j58qej"]
 
 [ext_resource type="Script" uid="uid://dnkavslurnraj" path="res://game_play.gd" id="1_sr1gb"]
-<<<<<<< HEAD
 [ext_resource type="FontFile" uid="uid://c80lwei2ykqy5" path="res://ROSSTEN.ttf" id="1_w8nmq"]
 [ext_resource type="Texture2D" uid="uid://bbop0k6xsfd2v" path="res://vector_pixel_heart_pixabay.png" id="2_sr1gb"]
 [ext_resource type="Texture2D" uid="uid://ljlqidemkwgl" path="res://sprites/Bomb_Pixel.png" id="2_vkeae"]
@@ -11,13 +10,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkeae"]
 bg_color = Color(0, 0, 0, 0.101960786)
-=======
-[ext_resource type="FontFile" uid="uid://c80lwei2ykqy5" path="res://fonts/ROSSTEN.ttf" id="1_w8nmq"]
-[ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://fonts/Ratego-Regular.otf" id="4_pj5e7"]
-[ext_resource type="Texture2D" uid="uid://bo3eqn43n1863" path="res://img/png_pixel_heart_pixabay.png" id="4_strlv"]
-[ext_resource type="Texture2D" uid="uid://db4ctvsyydcic" path="res://img/Rect_Button_Sheet.png" id="5_vkeae"]
-[ext_resource type="Texture2D" uid="uid://dti25g2v80tmv" path="res://img/png_pixel_coin_pixabay.png" id="6_uqw4b"]
->>>>>>> Wanda
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_strlv"]
 bg_color = Color(1, 1, 1, 1)
@@ -170,12 +162,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_gqjqd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pvdjo")
 text = "Exit"
 
-<<<<<<< HEAD
 [node name="btnLostContainer" type="VBoxContainer" parent="."]
 visible = false
-=======
-[node name="btnGoNextContainer" type="VBoxContainer" parent="."]
->>>>>>> Wanda
 layout_mode = 0
 offset_left = 450.0
 offset_top = 313.0
@@ -183,29 +171,11 @@ offset_right = 693.0
 offset_bottom = 506.0
 theme_override_constants/separation = 18
 
-<<<<<<< HEAD
 [node name="btnRestart2" type="Button" parent="btnLostContainer"]
-=======
-[node name="btnNextGame" type="TextureButton" parent="btnGoNextContainer"]
->>>>>>> Wanda
 process_mode = 3
 layout_mode = 2
-<<<<<<< HEAD
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-=======
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
-
-[node name="lblNextGame" type="Label" parent="btnGoNextContainer/btnNextGame"]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 31.0
-offset_right = 304.0
-offset_bottom = 75.0
->>>>>>> Wanda
 theme_override_fonts/font = ExtResource("4_pj5e7")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_strlv")
@@ -214,29 +184,11 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_gqjqd")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_pvdjo")
 text = "Restart"
 
-<<<<<<< HEAD
 [node name="btnExit" type="Button" parent="btnLostContainer"]
-=======
-[node name="btnExit" type="TextureButton" parent="btnGoNextContainer"]
->>>>>>> Wanda
 process_mode = 3
 layout_mode = 2
-<<<<<<< HEAD
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-=======
-texture_normal = SubResource("AtlasTexture_strlv")
-texture_pressed = SubResource("AtlasTexture_uqw4b")
-texture_hover = SubResource("AtlasTexture_gqjqd")
-stretch_mode = 0
-
-[node name="lblExit" type="Label" parent="btnGoNextContainer/btnExit"]
-layout_mode = 0
-offset_left = 134.0
-offset_top = 30.0
-offset_right = 241.0
-offset_bottom = 74.0
->>>>>>> Wanda
 theme_override_fonts/font = ExtResource("4_pj5e7")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_strlv")
@@ -289,42 +241,10 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-<<<<<<< HEAD
 [connection signal="pressed" from="HBoxContainer/btnPause" to="." method="_on_btn_pause_pressed"]
-=======
-[node name="coinImage" type="TextureRect" parent="coinContainer"]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 13.0
-offset_right = 94.30079
-offset_bottom = 79.0
-texture = ExtResource("6_uqw4b")
-expand_mode = 1
-
-[node name="lblWinMsg" type="Label" parent="."]
-layout_mode = 0
-offset_left = 351.0
-offset_top = 205.0
-offset_right = 892.0
-offset_bottom = 290.0
-theme_override_fonts/font = ExtResource("4_pj5e7")
-theme_override_font_sizes/font_size = 60
-text = "Congratulations!!"
-
-[node name="nodeLevelRoot" type="Node" parent="."]
-
-[connection signal="pressed" from="btnPause" to="." method="_on_btn_pause_pressed"]
->>>>>>> Wanda
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="btnPauseContainer/btnResume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="btnPauseContainer/btnRestart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="btnPauseContainer/btnExit" to="." method="_on_exit_pressed"]
-<<<<<<< HEAD
 [connection signal="pressed" from="btnLostContainer/btnRestart2" to="." method="_on_restart2_pressed"]
 [connection signal="pressed" from="btnLostContainer/btnExit" to="." method="_on_exit_pressed"]
-=======
-[connection signal="pressed" from="btnGoNextContainer/btnNextGame" to="." method="_on_nextGame_pressed"]
-[connection signal="pressed" from="btnGoNextContainer/btnExit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="btnNoLivesContainer/btnBack" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="btnNoLivesContainer/btnExit" to="." method="_on_exit_pressed"]
->>>>>>> Wanda
