@@ -23,7 +23,7 @@ func generate_buttons(number:=1) -> void:
 		var collision = CollisionShape2D.new()
 		collision.shape = shape
 	
-		var button = NTimesButton.new_button(sprite, collision)
+		var button = NTimesButton.new_button()
 		button.set_global_position(spawn_area.get_random_vector())
 		button.button_removed.connect(_on_button_removed)
 		add_child(button)
