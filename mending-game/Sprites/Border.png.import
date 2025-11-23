@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4fjdxged7rot"
-path="res://.godot/imported/Sword_Sheet.png-65e49ec4c3ff1354baf23864f3834eaf.ctex"
+uid="uid://bks8dvtgyw3ay"
+path="res://.godot/imported/Border.png-de32b0c1c4878178099ffd4241b5ca46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sword_Sheet.png"
-dest_files=["res://.godot/imported/Sword_Sheet.png-65e49ec4c3ff1354baf23864f3834eaf.ctex"]
+source_file="res://Sprites/Border.png"
+dest_files=["res://.godot/imported/Border.png-de32b0c1c4878178099ffd4241b5ca46.ctex"]
 
 [params]
 
