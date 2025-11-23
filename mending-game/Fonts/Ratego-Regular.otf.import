@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cywj3s24dmrop"
-path="res://.godot/imported/Ratego-Regular.otf-6c14c92de7abb2c7ac8a08385181a580.fontdata"
+path="res://.godot/imported/Ratego-Regular.otf-f3d78cd227e06d5a8ff1697daab795e9.fontdata"
 
 [deps]
 
-source_file="res://Ratego-Regular.otf"
-dest_files=["res://.godot/imported/Ratego-Regular.otf-6c14c92de7abb2c7ac8a08385181a580.fontdata"]
+source_file="res://Fonts/Ratego-Regular.otf"
+dest_files=["res://.godot/imported/Ratego-Regular.otf-f3d78cd227e06d5a8ff1697daab795e9.fontdata"]
 
 [params]
 
