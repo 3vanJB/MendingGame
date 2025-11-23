@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 var drop_zone_count: int
 @onready var object_spawn_area: SpawnArea = $ObjectSpawnArea
@@ -11,8 +11,8 @@ func _on_ready() -> void:
 	
 	var amount = 5
 	drop_zone_count = amount
-	generate_drop_zones(amount)
-	generate_objects(amount)
+	#generate_drop_zones(amount)
+	#generate_objects(amount)
 
 
 func generate_objects(number:=1) -> void:
@@ -26,7 +26,7 @@ func generate_objects(number:=1) -> void:
 		var collision = CollisionShape2D.new()
 		collision.shape = shape
 	
-		var object = DraggableObject.new_object(sprite, collision)
+		var object = DraggableObject.new_object()
 		object.set_global_position(object_spawn_area.get_random_vector())
 		add_child(object)
 		

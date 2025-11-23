@@ -9,16 +9,16 @@ var diff: Vector2 = Vector2.ZERO
 var mouse_inside_area: bool = false
 
 static func new_object(
-	object_sprite: Sprite2D,
-	object_collision: CollisionShape2D,
+	#object_sprite: Sprite2D,
+	#object_collision: CollisionShape2D,
 	object_type:int = 0
 	) -> DraggableObject:
 	var this_scene: PackedScene = preload("res://game_elements/draggable_object.tscn")
 	var object: DraggableObject = this_scene.instantiate()
-	object.sprite = object_sprite
-	object.add_child(object.sprite)
-	object.collision = object_collision
-	object.add_child(object.collision)
+	#object.sprite = object_sprite
+	#object.add_child(object.sprite)
+	#object.collision = object_collision
+	#object.add_child(object.collision)
 	object.type = object_type
 	return object
 

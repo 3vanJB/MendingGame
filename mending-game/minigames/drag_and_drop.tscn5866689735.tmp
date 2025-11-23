@@ -64,6 +64,9 @@ texture = ExtResource("4_vdmki")
 position = Vector2(190, 343)
 
 [node name="DraggableObject2" parent="Bricks" instance=ExtResource("5_vq8u2")]
-position = Vector2(678, 359)
+position = Vector2(425, 347)
+
+[node name="DraggableObject3" parent="Bricks" instance=ExtResource("5_vq8u2")]
+position = Vector2(678, 349)
 
 [connection signal="ready" from="." to="." method="_on_ready"]

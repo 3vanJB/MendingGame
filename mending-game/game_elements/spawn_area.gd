@@ -21,8 +21,8 @@ func _get_collision() -> CollisionShape2D:
 	return null
 
 func _get_random_rectangle_vector(collision: CollisionShape2D) -> Vector2:
-	var positionX = collision.position.x
-	var positionY = collision.position.y
+	var positionX = position.x
+	var positionY = position.y
 	var offsetX = collision.shape.size.x / 2
 	var offsetY = collision.shape.size.y / 2
 	var x = randf_range((positionX - offsetX), (positionX + offsetX))

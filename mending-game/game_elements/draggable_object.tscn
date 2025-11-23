@@ -1,11 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://b62fj1faq0s31"]
+[gd_scene load_steps=4 format=3 uid="uid://b62fj1faq0s31"]
 
 [ext_resource type="Script" uid="uid://bobkme60vkbhb" path="res://game_elements/draggable_object.gd" id="1_ui6dg"]
+[ext_resource type="Texture2D" uid="uid://nefljol684c" path="res://sprites/wallgame/brick.png" id="2_o0b8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnb0n"]
+size = Vector2(64, 32)
 
 [node name="DraggableObject" type="Area2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_ui6dg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_o0b8f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rnb0n")
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_shape_exited"]
