@@ -17,16 +17,6 @@ func _on_start_pressed() -> void:
 	#pass # Replace with function body.
 
 
-func _on_pause_pressed() -> void:
-	print ("Pause")
-	#pass # Replace with function body.
-
-
-func _on_restart_pressed() -> void:
-	print ("Restart")
-	#pass # Replace with function body.
-
-
 func _on_exit_pressed() -> void:
 	print ("Exit")
 	get_tree().quit()

@@ -154,7 +154,7 @@ offset_right = 693.0
 offset_bottom = 472.0
 theme_override_constants/separation = 18
 
-[node name="btnRestart2" type="Button" parent="btnLostContainer"]
+[node name="btnRestart" type="Button" parent="btnLostContainer"]
 process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
@@ -185,5 +185,4 @@ text = "Exit"
 [connection signal="pressed" from="btnPauseContainer/btnResume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="btnPauseContainer/btnRestart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="btnPauseContainer/btnExit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="btnLostContainer/btnRestart2" to="." method="_on_restart2_pressed"]
 [connection signal="pressed" from="btnLostContainer/btnExit" to="." method="_on_exit_pressed"]
