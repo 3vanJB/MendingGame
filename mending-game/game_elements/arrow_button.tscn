@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c575ewu7w2vv4"]
-
-[ext_resource type="Script" uid="uid://cn3nqx0v5elbs" path="res://game_elements/arrow_button.gd" id="1_f4d5w"]
-
-[node name="ArrowButton" type="Node2D" groups=["arrowbutton"]]
-script = ExtResource("1_f4d5w")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
