@@ -1,7 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://lqk7xeu82263"]
 
 [ext_resource type="Script" uid="uid://ckua7rqkhaph0" path="res://main_menu.gd" id="1_7vrkn"]
+<<<<<<< HEAD
 [ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://Ratego-Regular.otf" id="2_7vrkn"]
+=======
+[ext_resource type="FontFile" uid="uid://cywj3s24dmrop" path="res://fonts/Ratego-Regular.otf" id="2_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://db4ctvsyydcic" path="res://img/Rect_Button_Sheet.png" id="2_fu7sn"]
+>>>>>>> Wanda
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rhts7"]
 bg_color = Color(1, 1, 1, 1)
@@ -12,6 +17,7 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
+<<<<<<< HEAD
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
@@ -21,6 +27,21 @@ corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fu7sn"]
+=======
+[sub_resource type="AtlasTexture" id="AtlasTexture_jix8l"]
+atlas = ExtResource("2_fu7sn")
+region = Rect2(0, 0, 150, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glbon"]
+atlas = ExtResource("2_fu7sn")
+region = Rect2(302, -1, 154, 99)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlkkf"]
+atlas = ExtResource("2_fu7sn")
+region = Rect2(156, 0, 145, 100)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_glbon"]
+>>>>>>> Wanda
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

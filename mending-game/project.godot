@@ -11,7 +11,11 @@ config_version=5
 [application]
 
 config/name="MendingGame"
+<<<<<<< HEAD
 run/main_scene="uid://dusqvx4xwe7fh"
+=======
+run/main_scene="uid://lqk7xeu82263"
+>>>>>>> Wanda
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
