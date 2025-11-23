@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c283jfvpa4qgh"]
-
-[ext_resource type="Script" uid="uid://b7k8txkoav2oo" path="res://game_elements/n_times_button.gd" id="1_a6ujh"]
-
-[node name="NTimeButton" type="Area2D"]
-script = ExtResource("1_a6ujh")
-
-[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
-[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_shape_exited"]
