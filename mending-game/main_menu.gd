@@ -11,13 +11,23 @@ func _process(delta: float) -> void:
 	pass
 
 
+
+
+
+
+
+
+
 func _on_start_pressed() -> void:
+	#pass # Replace with function body.
+	
 	print ("Start")
 	get_tree().change_scene_to_file("res://game_play.tscn")
-	#pass # Replace with function body.
+	
 
 
 func _on_exit_pressed() -> void:
+	#pass # Replace with function body.
+	
 	print ("Exit")
 	get_tree().quit()
-	#pass # Replace with function body.
