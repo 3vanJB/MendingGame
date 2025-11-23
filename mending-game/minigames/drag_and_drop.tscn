@@ -9,7 +9,9 @@ radius = 189.39113
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lpw8o"]
 size = Vector2(391, 230)
 
-[node name="Root" type="Node"]
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_vr7aa")
 
 [node name="Camera2D" type="Camera2D" parent="."]

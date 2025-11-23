@@ -13,7 +13,7 @@ var LEVEL_PATH = "res://minigames/"
 const MINIGAME_LIST = [
 	"click_random_buttons", # Level 1
 	"drag_and_drop",        # Level 2
-	"click_correct_arroa"   # Level 3
+	"click_correct_arrow"   # Level 3
 ]
 
 var current_minigame_index = 0
@@ -126,9 +126,17 @@ func _on_nextGame_pressed() -> void:
 
 	current_minigame_index += 1
 	
+	$btnPauseContainer.hide()
+	$btnNoLivesContainer.hide()
+	$lblLostMsg.hide()
+	$lblWinMsg.hide()
+	$btnGoNextContainer.hide()	
+	
 	if current_minigame_index < MINIGAME_LIST.size():
 		
 		# --- Load Next Minigame ---
+				
+	
 				
 		# Reset and start the timer for the next level
 		time_left = 10 
@@ -168,6 +176,8 @@ func handle_minigame_win() -> void:
 	# 1. Stop the main timer (optional, but usually desired on win)
 	$Timer.stop() 
 	coins += 1
+	
+	update_status_display()
 	
 	# 2. Show the win UI
 	$lblWinMsg.show()

@@ -1,12 +1,10 @@
 extends Node2D
 
-signal minigame_finished
-
 const possible_inputs = ["up", "down", "left", "right"]
 @onready var arrows = $Arrows
 @onready var stick = $stick
-const sprites = [preload("res://sprites/diagnosegame/fireico.png"), preload("res://sprites/diagnosegame/iceico.png"), 
-preload("res://sprites/diagnosegame/paraico.png"), preload("res://sprites/diagnosegame/poisicon.png")]
+const sprites = [preload("res://Sprites/diagnosegame/fireico.png"), preload("res://Sprites/diagnosegame/iceico.png"), 
+preload("res://Sprites/diagnosegame/paraico.png"), preload("res://sprites/diagnosegame/poisicon.png")]
 var avaliablesprites = [sprites[0],sprites[1],sprites[2],sprites[3]]
 const button_distance = 30
 var correct_input
@@ -80,7 +78,6 @@ func _create_button(inputEvent: StringName, texture: Texture2D) -> ArrowButton:
 
 func _correct_button_clicked():
 	if playing:
-		minigame_finished.emit()
 		print("You Win")
 		stick.get_node("AnimationPlayer").play("win")
 		await get_tree().create_timer(1).timeout
