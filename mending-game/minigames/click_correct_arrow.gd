@@ -14,11 +14,7 @@ var playing = true
 signal gamewon
 signal gamelost
 
-
-func _on_ready() -> void:
-	#var button_blu = load("res://icon.svg")
-	#var button_red = load("res://icon_red.svg")
-	
+func _ready() -> void:
 	gamewon.connect(SIGNALBUS.ongamewon)
 	gamelost.connect(SIGNALBUS.ongamelost)
 	
@@ -49,6 +45,14 @@ func _on_ready() -> void:
 				stick.get_node("AnimationPlayer").play("poison")
 			_:
 				pass
+	
+
+func _on_ready() -> void:
+	#var button_blu = load("res://icon.svg")
+	#var button_red = load("res://icon_red.svg")
+	show()
+	stick.show()
+	
 
 @warning_ignore("unused_parameter")
 func _create_rotated_sprite(inputEvent:StringName, texture:Texture2D) -> Sprite2D:
@@ -79,14 +83,16 @@ func _create_button(inputEvent: StringName, texture: Texture2D) -> ArrowButton:
 func _correct_button_clicked():
 	if playing:
 		print("You Win")
+		get_tree().call_group("arrowbutton", "disable")
 		stick.get_node("AnimationPlayer").play("win")
 		await get_tree().create_timer(1).timeout
 		gamewon.emit()
-		#playing = false
+		playing = false
 
 func _wrong_button_clicked():
 	if playing:
 		print("You Lose")
 		stick.get_node("AnimationPlayer").play("fail")
+		await get_tree().create_timer(1).timeout
 		gamelost.emit()
-		#playing = false
+		playing = false

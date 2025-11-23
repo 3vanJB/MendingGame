@@ -17,14 +17,27 @@ func _ready() -> void:
 
 func startnextgame():
 	if curgame != null:
+		curgame.hide()
 		curgame.queue_free()
+	#await get_tree().create_timer(1).timeout
 	var game = nextgame.instantiate()
 	game.position = spawnmarker.position
 	
 	curgame = game
 	add_child(game)
 	
-	
+
+func gamelost():
+	HUD.lives -= 1
+	HUD.update_lives_display()
+	if HUD.lives > 0:
+		startnextgame()
+	else:
+		gameover()
+
+func gameover():
+	pass
+
 
 
 

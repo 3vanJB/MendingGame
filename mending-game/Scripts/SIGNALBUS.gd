@@ -3,10 +3,12 @@ extends Node
 var gamescene
 
 func ongamewon():
-	gamescene.HUD.incrementscore()
-	gamescene.startnextgame()
+	if gamescene != null:
+		gamescene.HUD.incrementscore()
+		gamescene.startnextgame()
 
 
 
 func ongamelost():
-	pass
+	if gamescene != null:
+		gamescene.gamelost()
