@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvvpghfamc4gd"]
 
 [ext_resource type="Script" uid="uid://bonyfb4am2fcf" path="res://minigames/click_correct_arrow.gd" id="1_1jig4"]
-[ext_resource type="PackedScene" uid="uid://cjirx6kxqimpw" path="res://sprites/diagnosegame/stickman.tscn" id="2_bdcvp"]
+[ext_resource type="PackedScene" uid="uid://cjirx6kxqimpw" path="res://Sprites/diagnosegame/stickman.tscn" id="2_bdcvp"]
 [ext_resource type="Texture2D" uid="uid://tqe44c731rv8" path="res://Backgrounds/stickbg.png" id="2_v4akj"]
-[ext_resource type="Texture2D" uid="uid://0f75syl8wgym" path="res://sprites/diagnosegame/dpad.png" id="3_7tp1p"]
+[ext_resource type="Texture2D" uid="uid://0f75syl8wgym" path="res://Sprites/diagnosegame/dpad.png" id="3_7tp1p"]
 
 [node name="Root" type="Node2D"]
 texture_filter = 1

@@ -1,13 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://u813prmq8b70"]
+[gd_scene load_steps=5 format=3 uid="uid://u813prmq8b70"]
 
 [ext_resource type="Script" uid="uid://b4f781fuy4b0y" path="res://Scripts/audio_manager.gd" id="1_sm2tf"]
 [ext_resource type="AudioStream" uid="uid://b1vn21qt8ma6e" path="res://Audio/hindrance-124376.mp3" id="2_4tj6f"]
+[ext_resource type="AudioStream" uid="uid://bmbn1sn55k1w6" path="res://Audio/JDSherbert's Audio/JDSherbert - Pixel UI SFX Pack - Cursor 2 (Square).mp3" id="3_hhwve"]
+[ext_resource type="AudioStream" uid="uid://dljqieltoikx0" path="res://Audio/JDSherbert's Audio/JDSherbert - Pixel UI SFX Pack - Error 2 (Square).mp3" id="4_qixve"]
 
 [node name="Audio_Manager" type="Node"]
 script = ExtResource("1_sm2tf")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_4tj6f")
+volume_db = -2.0
 autoplay = true
 
 [node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hhwve")
+volume_db = -5.0
+
+[node name="FailPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qixve")

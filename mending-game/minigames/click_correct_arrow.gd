@@ -71,12 +71,16 @@ func _create_button(inputEvent: StringName, texture: Texture2D) -> ArrowButton:
 	var button = ArrowButton.new_arrow_button(inputEvent)
 	button.add_child(sprite)
 	if (inputEvent == "up"):
+		AudioManager.audio_stream_02.play()
 		button.global_position.y -= button_distance
 	elif (inputEvent == "right"):
+		AudioManager.audio_stream_02.play()
 		button.global_position.x += button_distance
 	elif (inputEvent == "down"):
+		AudioManager.audio_stream_02.play()
 		button.global_position.y += button_distance
 	elif (inputEvent == "left"):
+		AudioManager.audio_stream_02.play()
 		button.global_position.x -= button_distance
 	return button
 
@@ -92,6 +96,7 @@ func _correct_button_clicked():
 
 func _wrong_button_clicked():
 	if playing:
+		AudioManager.fail_sound.play()
 		print("You Lose")
 		get_tree().call_group("arrowbutton", "disable")
 		stick.get_node("AnimationPlayer").play("fail")

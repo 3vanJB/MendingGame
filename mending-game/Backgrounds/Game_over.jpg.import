@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4fjdxged7rot"
-path="res://.godot/imported/Sword_Sheet.png-65e49ec4c3ff1354baf23864f3834eaf.ctex"
+uid="uid://doo1w5e82qct5"
+path="res://.godot/imported/Game_over.jpg-83343f03911134109b6379dcff626c9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Sword_Sheet.png"
-dest_files=["res://.godot/imported/Sword_Sheet.png-65e49ec4c3ff1354baf23864f3834eaf.ctex"]
+source_file="res://Backgrounds/Game_over.jpg"
+dest_files=["res://.godot/imported/Game_over.jpg-83343f03911134109b6379dcff626c9d.ctex"]
 
 [params]
 
