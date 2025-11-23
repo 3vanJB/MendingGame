@@ -9,6 +9,7 @@ var lives : int = 5  # starting lives
 @onready var tlabel = $HBoxContainer/TextureRect/HBoxContainer/timerLabel
 @onready var scorelabel = $Score/scorelabel
 @onready var plabel = $promptcontainer/Prompt
+@onready var timer = $Timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

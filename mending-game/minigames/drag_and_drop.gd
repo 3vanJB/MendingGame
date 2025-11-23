@@ -1,18 +1,40 @@
 extends Node2D
 
-var drop_zone_count: int
+var drop_zone_count: int = 2
 @onready var object_spawn_area: SpawnArea = $ObjectSpawnArea
 @onready var drop_zone_spawn_area: SpawnArea = $DropZoneSpawnArea
+@onready var zones = $DropZones.get_children()
+@onready var covers = $HoleCovers.get_children()
+@onready var avaliablezones = [0,1,2,3]
+var activezones = []
 var brick = preload("res://game_elements/draggable_object.tscn")
 
-func _on_ready() -> void:
+signal gamewon
+signal gamelost
+
+
+func _ready() -> void:
 	get_viewport().physics_object_picking_sort = true
 	get_viewport().physics_object_picking_first_only = true
+	var zoneindex = avaliablezones[randi() % avaliablezones.size()]
+	avaliablezones.remove_at(avaliablezones.find(zoneindex))
+	activezones.push_back(zoneindex)
+	zoneindex = avaliablezones[randi() % avaliablezones.size()]
+	avaliablezones.remove_at(avaliablezones.find(zoneindex))
+	activezones.push_back(zoneindex)
 	
-	var amount = 5
-	drop_zone_count = amount
-	#generate_drop_zones(amount)
-	#generate_objects(amount)
+	for i in activezones.size():
+		covers[activezones[i]].hide()
+		zones[activezones[i]].monitoring = true
+		zones[activezones[i]].monitorable = true
+		zones[activezones[i]].objectDropped.connect(_on_drop_zone_object_dropped)
+
+#func _on_ready() -> void:
+	#
+	#var amount = 5
+	#drop_zone_count = amount
+	##generate_drop_zones(amount)
+	##generate_objects(amount)
 
 
 func generate_objects(number:=1) -> void:
@@ -54,3 +76,4 @@ func _on_drop_zone_object_dropped() -> void:
 	print(drop_zone_count)
 	if drop_zone_count == 0:
 		print("You Win!")
+		gamewon.emit()
