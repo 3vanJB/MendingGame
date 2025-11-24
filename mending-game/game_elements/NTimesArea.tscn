@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwbnvc5eotfac"]
+
+[ext_resource type="Texture2D" uid="uid://dxxcox8l2pot0" path="res://Sprites/Sparkle_Sheet.png" id="1_q0whf"]
+[ext_resource type="Script" uid="uid://b7yggxwhxswa1" path="res://game_elements/n_times_area.gd" id="1_qhs2f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhs2f"]
+atlas = ExtResource("1_q0whf")
+region = Rect2(0, 0, 125, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frlny"]
+atlas = ExtResource("1_q0whf")
+region = Rect2(175, 0, 125, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fkr4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhs2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frlny")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0whf"]
+size = Vector2(102, 137)
+
+[node name="NTimesArea" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qhs2f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fkr4e")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4.5)
+shape = SubResource("RectangleShape2D_q0whf")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

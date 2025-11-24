@@ -74,8 +74,9 @@ func generate_drop_zones(number:=1) -> void:
 		
 func _on_drop_zone_object_dropped() -> void:
 	drop_zone_count -= 1
-	
+	AudioManager.audio_stream_02.play()
 	print(drop_zone_count)
 	if drop_zone_count == 0:
+		AudioManager.win_sound.play()
 		print("You Win!")
 		gamewon.emit()

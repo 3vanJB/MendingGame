@@ -1,23 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://b62fj1faq0s31"]
 
-[ext_resource type="Script" uid="uid://bobkme60vkbhb" path="res://game_elements/draggable_object.gd" id="1_ui6dg"]
-[ext_resource type="Texture2D" uid="uid://nefljol684c" path="res://sprites/wallgame/brick.png" id="2_o0b8f"]
+[ext_resource type="Script" uid="uid://bobkme60vkbhb" path="res://game_elements/draggable_object.gd" id="1_nsxq7"]
+[ext_resource type="Texture2D" uid="uid://nefljol684c" path="res://Sprites/wallgame/brick.png" id="2_rdayy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnb0n"]
-size = Vector2(64, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0b8f"]
+size = Vector2(70.333336, 34.666668)
 
 [node name="DraggableObject" type="Area2D"]
 texture_filter = 1
 scale = Vector2(3, 3)
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_ui6dg")
+script = ExtResource("1_nsxq7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_o0b8f")
+modulate = Color(0.92120695, 0.7347657, 0.7371291, 1)
+position = Vector2(-3.8146973e-06, 0.33333397)
+scale = Vector2(1.0927083, 1.0666666)
+texture = ExtResource("2_rdayy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rnb0n")
+position = Vector2(0.16666794, 0.66666603)
+shape = SubResource("RectangleShape2D_o0b8f")
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_shape_exited"]

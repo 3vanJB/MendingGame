@@ -22,8 +22,8 @@ texture = ExtResource("2_xelri")
 hframes = 4
 
 [node name="CreditText" type="Label" parent="."]
-offset_left = 109.49994
-offset_top = 283.0
+offset_left = 129.0
+offset_top = 288.0
 offset_right = 860.49994
 offset_bottom = 729.0
 theme_override_colors/font_outline_color = Color(0.7708395, 0.77083945, 0.77083945, 1)
