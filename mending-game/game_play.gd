@@ -142,3 +142,9 @@ func _on_restart2_pressed() -> void:
 
 func update_lives_display() -> void:
 	$HBoxContainer/lifeContainer/lifeNumber.text = str(lives)
+
+
+func _on_btn_pause_2_pressed() -> void:
+	get_tree().paused = true
+	pausecontainer.show()
+	print ("Pause")

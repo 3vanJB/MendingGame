@@ -328,6 +328,7 @@ text = "Exit"
 
 [connection signal="pressed" from="HBoxContainer/btnPause" to="." method="_on_btn_pause_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="btnPause2" to="." method="_on_btn_pause_2_pressed"]
 [connection signal="pressed" from="btnLostContainer/btnRestart2" to="." method="_on_restart2_pressed"]
 [connection signal="pressed" from="btnLostContainer/btnExit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/btnPauseContainer/btnResume" to="." method="_on_resume_pressed"]
