@@ -66,6 +66,7 @@ func incrementscore():
 func resetscore():
 	score = 0
 	scorelabel.text = "0"
+	AudioManager.music_setPitch( 1 + (score) )
 
 
 func _on_btn_pause_pressed() -> void:

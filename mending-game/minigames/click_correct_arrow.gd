@@ -87,6 +87,7 @@ func _create_button(inputEvent: StringName, texture: Texture2D) -> ArrowButton:
 func _correct_button_clicked():
 	if playing:
 		print("You Win")
+		AudioManager.win_sound.play()
 		get_tree().call_group("arrowbutton", "disable")
 		stick.get_node("AnimationPlayer").play("win")
 		await get_tree().create_timer(1).timeout

@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dusqvx4xwe7fh"]
+[gd_scene load_steps=4 format=3 uid="uid://dusqvx4xwe7fh"]
 
 [ext_resource type="Script" uid="uid://13tstyxsrklv" path="res://Scenes/level_1.gd" id="1_6444e"]
-[ext_resource type="PackedScene" uid="uid://c2dgub3871pso" path="res://Interactable Scenes/transition_button.tscn" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://vlfnoiti1c7r" path="res://Backgrounds/Dungeon_Drop.png" id="2_8ffim"]
-[ext_resource type="Texture2D" uid="uid://ljlqidemkwgl" path="res://sprites/Bomb_Pixel.png" id="3_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://ktm2f4j58qej" path="res://game_play.tscn" id="5_6444e"]
 
 [node name="Level_1" type="Node2D"]
@@ -11,24 +9,11 @@ texture_filter = 1
 script = ExtResource("1_6444e")
 
 [node name="DungeonDrop" type="Sprite2D" parent="."]
+self_modulate = Color(0.7139296, 0.61742985, 0.59708893, 1)
 z_index = -12
-position = Vector2(722, 406)
-scale = Vector2(4.792, 4.02)
+position = Vector2(722, 405.49997)
+scale = Vector2(4.792, 4.105)
 texture = ExtResource("2_8ffim")
-
-[node name="TransitionButton" parent="." instance=ExtResource("1_vk57k")]
-visible = false
-offset_left = 940.0
-offset_top = 524.0
-offset_right = 1092.0
-offset_bottom = 624.0
-changeScene = "res://Scenes/main_menu.tscn"
-textString = "Exit"
-
-[node name="BombPixel" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(56, 343)
-texture = ExtResource("3_xfk5q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
@@ -46,9 +31,3 @@ grow_vertical = 1
 
 [node name="GameSpawn" type="Marker2D" parent="."]
 position = Vector2(284, 260)
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_right = 1439.0
-offset_bottom = 809.0
-color = Color(0.42427135, 0.18572935, 0.771032, 1)

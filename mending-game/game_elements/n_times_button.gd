@@ -6,10 +6,7 @@ signal button_removed
 var clicks: int
 var mouse_inside_area: bool = false
 
-static func new_button(
-	
-	n_clicks: int = 1
-	) -> NTimesButton:
+static func new_button(n_clicks: int = 1) -> NTimesButton:
 	var this_scene: PackedScene = preload("res://game_elements/n_times_button.tscn")
 	var button: NTimesButton = this_scene.instantiate()
 	button.clicks = n_clicks

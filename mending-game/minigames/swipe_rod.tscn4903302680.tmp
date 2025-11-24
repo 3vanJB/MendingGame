@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://cagoennbgnrit"]
+
+[ext_resource type="Texture2D" uid="uid://cydotaa5jpem" path="res://Backgrounds/MiniGame_Background.jpg" id="1_1dtun"]
+[ext_resource type="Script" uid="uid://ywa1wh86uatp" path="res://minigames/swipe_rod.gd" id="1_7dqvl"]
+[ext_resource type="PackedScene" uid="uid://d1l7b0p4pgsyl" path="res://game_elements/draggable_tool.tscn" id="2_rnk11"]
+[ext_resource type="Texture2D" uid="uid://bks8dvtgyw3ay" path="res://Sprites/Border.png" id="2_xc7cw"]
+[ext_resource type="Script" uid="uid://cm6sclddwou" path="res://game_elements/spawn_area.gd" id="5_ws5od"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lhefx"]
+size = Vector2(69.5, 332)
+
+[node name="Swipe_Rod" type="Node2D"]
+script = ExtResource("1_7dqvl")
+
+[node name="MiniGameBackground" type="Sprite2D" parent="."]
+self_modulate = Color(0.6547219, 0.6576929, 0.87321514, 1)
+position = Vector2(387.74997, 223)
+scale = Vector2(0.9852768, 0.9936306)
+texture = ExtResource("1_1dtun")
+metadata/_edit_lock_ = true
+
+[node name="Wand Shadow" type="ColorRect" parent="."]
+offset_left = 401.0
+offset_top = 279.0
+offset_right = 558.62695
+offset_bottom = 319.0
+rotation = 1.633061
+color = Color(0.23683712, 0.13611764, 0.07109561, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Wand Shadow"]
+layout_mode = 0
+offset_left = 22.437832
+offset_top = 40.258297
+offset_right = 160.73642
+offset_bottom = 80.2583
+rotation = 2.9782324
+color = Color(0.23683712, 0.13611764, 0.07109561, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Wand Shadow"]
+layout_mode = 0
+offset_left = -105.378845
+offset_top = 63.256203
+offset_right = -28.452034
+offset_bottom = 103.2562
+rotation = 3.2540245
+color = Color(0.23683712, 0.13611764, 0.07109561, 1)
+
+[node name="Wand" type="ColorRect" parent="."]
+offset_left = 419.57648
+offset_top = 280.11072
+offset_right = 577.2034
+offset_bottom = 320.11072
+rotation = 1.633061
+color = Color(0.29675862, 0.17518216, 0.097156145, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Wand"]
+layout_mode = 0
+offset_left = 22.437832
+offset_top = 40.258297
+offset_right = 160.73642
+offset_bottom = 80.2583
+rotation = 2.9782324
+color = Color(0.29675862, 0.17518216, 0.097156145, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Wand"]
+layout_mode = 0
+offset_left = -105.378845
+offset_top = 63.256203
+offset_right = -30.334686
+offset_bottom = 103.2562
+rotation = 3.2540245
+color = Color(0.29675862, 0.17518216, 0.097156145, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Wand"]
+layout_mode = 0
+offset_left = -29.429018
+offset_top = 8.659823
+offset_right = -22.38814
+offset_bottom = 47.896305
+rotation = -0.26275894
+color = Color(0, 0, 0, 1)
+
+[node name="Tape" type="ColorRect" parent="."]
+visible = false
+offset_left = 350.00003
+offset_top = 240.00002
+offset_right = 414.44452
+offset_bottom = 280.0
+rotation = -0.1685528
+color = Color(0.7536915, 0.7582695, 0.4895857, 1)
+
+[node name="SpawnArea2" type="Area2D" parent="."]
+position = Vector2(1056, 442)
+script = ExtResource("5_ws5od")
+metadata/_custom_type_script = "uid://cm6sclddwou"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea2"]
+position = Vector2(-758, -178)
+shape = SubResource("RectangleShape2D_lhefx")
+
+[node name="SpawnArea" type="Area2D" parent="."]
+position = Vector2(528, 221)
+script = ExtResource("5_ws5od")
+metadata/_custom_type_script = "uid://cm6sclddwou"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
+position = Vector2(-44, 34)
+shape = SubResource("RectangleShape2D_lhefx")
+
+[node name="DraggableObject" parent="." instance=ExtResource("2_rnk11")]
+position = Vector2(108.000015, 267)
+scale = Vector2(2.023954, 2.2551966)
+
+[node name="Border" type="Sprite2D" parent="."]
+modulate = Color(0.68235296, 0.68235296, 0.68235296, 1)
+position = Vector2(394, 225)
+texture = ExtResource("2_xc7cw")

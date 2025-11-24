@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bbtglf2sxkms3"]
+[gd_scene load_steps=11 format=3 uid="uid://bbtglf2sxkms3"]
 
 [ext_resource type="Script" uid="uid://b5yja3uvbunbx" path="res://minigames/click_random_buttons.gd" id="1_oy5fc"]
 [ext_resource type="PackedScene" uid="uid://dj5hwjwotfupy" path="res://game_elements/spawn_area.tscn" id="2_25dlh"]
 [ext_resource type="Texture2D" uid="uid://cydotaa5jpem" path="res://Backgrounds/MiniGame_Background.jpg" id="2_51r7w"]
-[ext_resource type="Texture2D" uid="uid://d4fjdxged7rot" path="res://sprites/Sword_Sheet.png" id="3_25dlh"]
+[ext_resource type="Texture2D" uid="uid://d4fjdxged7rot" path="res://Sprites/Sword_Sheet.png" id="3_25dlh"]
+[ext_resource type="Texture2D" uid="uid://bks8dvtgyw3ay" path="res://Sprites/Border.png" id="5_6rk7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51r7w"]
 atlas = ExtResource("3_25dlh")
@@ -45,7 +46,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjmj0"]
-size = Vector2(564, 204)
+size = Vector2(472, 165)
 
 [node name="Root" type="Node2D"]
 texture_filter = 1
@@ -57,17 +58,28 @@ offset_bottom = 471.0
 texture = ExtResource("2_51r7w")
 
 [node name="Sword" type="AnimatedSprite2D" parent="."]
-position = Vector2(438.00003, 222.00002)
+position = Vector2(424.27045, 221.55713)
 rotation = -0.78094244
-scale = Vector2(4, 4)
+scale = Vector2(4.130203, 4.1405563)
 sprite_frames = SubResource("SpriteFrames_q7f7s")
 
 [node name="SpawnArea" parent="." instance=ExtResource("2_25dlh")]
 position = Vector2(420, 261)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
-position = Vector2(9, 0)
+position = Vector2(-87, 2.5)
 shape = SubResource("RectangleShape2D_hjmj0")
 metadata/_edit_lock_ = true
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.300000000000001
+one_shot = true
+
+[node name="Border" type="Sprite2D" parent="."]
+modulate = Color(0.68307734, 0.6830774, 0.68307734, 1)
+position = Vector2(429.49997, 232.50002)
+scale = Vector2(1.0518256, 1.0806794)
+texture = ExtResource("5_6rk7q")
+
 [connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

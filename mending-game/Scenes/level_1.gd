@@ -2,9 +2,10 @@ extends Node2D
 
 
 var games = {
-	"diagnose":{"path":"res://minigames/click_correct_arrow.tscn", "text":"Cure!"},
-	"wall":{"path":"res://minigames/drag_and_drop.tscn", "text": "Fix!"},
-	"sword":{"path":"res://minigames/click_random_buttons.tscn", "text": "Shine!"}
+	"diagnose":{"path":"res://minigames/click_correct_arrow.tscn", "text":"Arrow Keys!"},
+	"wall":{"path":"res://minigames/drag_and_drop.tscn", "text": "Drag!"},
+	"sword":{"path":"res://minigames/click_random_buttons.tscn", "text": "Click!"},
+	"mend":{"path":"res://minigames/swipe_rod.tscn","text":"Wrap!"}
 	}
 var nextgame = load(games["diagnose"]["path"])
 var nexttext = games["diagnose"]["text"]
@@ -44,6 +45,7 @@ func startnextgame():
 	
 
 func gamelost():
+	AudioManager.fail_sound.play()
 	HUD.lives -= 1
 	HUD.update_lives_display()
 	if HUD.lives > 0:
@@ -52,11 +54,7 @@ func gamelost():
 		gameover()
 
 func gameover():
-	
 	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
-
-
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

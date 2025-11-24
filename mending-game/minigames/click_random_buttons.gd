@@ -34,7 +34,13 @@ func generate_buttons(number:=1) -> void:
 		add_child(button)
 
 func _on_button_removed() -> void:
+	AudioManager.audio_stream_02.play()
 	remaining_buttons -= 1
 	if remaining_buttons == 0:
+		AudioManager.win_sound.play()
 		sprite.play("fixed")
 		gamewon.emit()
+
+
+func _on_timer_timeout() -> void:
+	sprite.play("broken")

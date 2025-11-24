@@ -9,6 +9,8 @@ var current_music_player : AudioStreamPlayer # the current player
 @onready var audio_stream_01 : AudioStreamPlayer = $MusicPlayer
 @onready var audio_stream_02 : AudioStreamPlayer = $ClickPlayer
 @onready var fail_sound : AudioStreamPlayer =$FailPlayer
+@onready var win_sound: AudioStreamPlayer = $WinPlayer
+
 func _ready() -> void:
 	current_music_player = audio_stream_01
 	#audio_stream_01.autoplay
