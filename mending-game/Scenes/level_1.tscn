@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dusqvx4xwe7fh"]
 
 [ext_resource type="Script" uid="uid://13tstyxsrklv" path="res://Scenes/level_1.gd" id="1_6444e"]
-[ext_resource type="Texture2D" uid="uid://vlfnoiti1c7r" path="res://Backgrounds/Dungeon_Drop.png" id="2_8ffim"]
+[ext_resource type="Texture2D" uid="uid://nhg83npnw7be" path="res://Backgrounds/Dungeon_Drop_B.jpg" id="2_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://ktm2f4j58qej" path="res://game_play.tscn" id="5_6444e"]
 
 [node name="Level_1" type="Node2D"]
@@ -9,11 +9,10 @@ texture_filter = 1
 script = ExtResource("1_6444e")
 
 [node name="DungeonDrop" type="Sprite2D" parent="."]
-self_modulate = Color(0.7139296, 0.61742985, 0.59708893, 1)
 z_index = -12
 position = Vector2(722, 405.49997)
 scale = Vector2(4.792, 4.105)
-texture = ExtResource("2_8ffim")
+texture = ExtResource("2_xfk5q")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
